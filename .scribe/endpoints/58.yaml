@@ -1,0 +1,391 @@
+name: 'Cities - Client'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/cities
+    metadata:
+      groupName: 'Cities - Client'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of cities'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: 'Filter by country ref.'
+        required: false
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: 'Filter by most popular.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      country: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+      region: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+      popular: true
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: est
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 40
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 57
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: est
+      popular: false
+      country: ut
+      page: 40
+      per_page: 57
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"status":false,"message":"Please resolve the warnings!","errors":{"region":["The region is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/client/cities/{slug}'
+    metadata:
+      groupName: 'Cities - Client'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the events under a city'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the city.'
+        required: true
+        example: 987b93b3-d31c-4530-809b-156e1e7ad80e
+        type: string
+        custom: []
+      city_slug:
+        name: city_slug
+        description: 'The slug of the city.'
+        required: true
+        example: midlands
+        type: string
+        custom: []
+    cleanUrlParameters:
+      slug: 987b93b3-d31c-4530-809b-156e1e7ad80e
+      city_slug: midlands
+    queryParameters:
+      name:
+        name: name
+        description: 'Filter by name. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category ref.'
+        required: false
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Filter by start_date. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2018"'
+        type: string
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Filter by end_date. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2023"'
+        type: string
+        custom: []
+      price:
+        name: price
+        description: 'Filter by a price range.'
+        required: false
+        example:
+          - 12
+          - 80
+        type: 'integer[]'
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'Filter by address.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Filter by virtual_events. Must be one of include, exclude, only.'
+        required: false
+        example: include
+        type: string
+        custom: []
+      date:
+        name: date
+        description: 'Filter by date. Must be one of newest, oldest, this_year, next_year, next_3_months, next_6_months, 2022-09, 2022-10.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      skip:
+        name: skip
+        description: 'The number of items to skip before taking the number of items specified by the take query param'
+        required: false
+        example: 6
+        type: integer
+        custom: []
+      take:
+        name: take
+        description: 'Number of items to return. Example 6'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      category: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+      start_date: '"22-02-2018"'
+      end_date: '"22-02-2023"'
+      price:
+        - 12
+        - 80
+      virtual_events: include
+      skip: 6
+      take: 1
+      page: 1
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: nesciunt
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example: 27-05-2024
+        type: string
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Must be a valid date in the format <code>d-m-Y</code>. Must be a date after or equal to <code>start_date</code>.'
+        required: false
+        example: '2083-09-16'
+        type: string
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: false
+        example:
+          - 5
+        type: 'integer[]'
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: sint
+        type: string
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Must be one of <code>include</code>, <code>exclude</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 70
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 24
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: nesciunt
+      start_date: 27-05-2024
+      end_date: '2083-09-16'
+      price:
+        - 5
+      region: sint
+      address: et
+      virtual_events: only
+      date: et
+      page: 70
+      per_page: 24
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"status":false,"message":"Please resolve the warnings!","errors":{"category":["The category is invalid."],"end_date":["The end date does not match the format d-m-Y."],"price":["The price must contain 2 items."],"region":["The region is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,880 @@
+name: 'Events - Client'
+description: 'The events on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'Filter by name. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category slug.'
+        required: false
+        example: marathons
+        type: string
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Filter by start_date. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2018"'
+        type: string
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Filter by end_date. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2023"'
+        type: string
+        custom: []
+      price:
+        name: price
+        description: 'Filter by a price range.'
+        required: false
+        example:
+          - 12
+          - 80
+        type: 'integer[]'
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Filter by city ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: 'Filter by venue ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'Filter by address.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      radius:
+        name: radius
+        description: 'Filter by a location (address) radius (the area that spans the given location by the radius value provided).'
+        required: false
+        example:
+          - 12
+          - 80
+        type: 'integer[]'
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Filter by virtual_events. Must be one of include, exclude, only.'
+        required: false
+        example: include
+        type: string
+        custom: []
+      date:
+        name: date
+        description: 'Filter by date. Must be one of newest, oldest, this_year, next_year, next_3_months, next_6_months, 2022-09, 2022-10.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      skip:
+        name: skip
+        description: 'The number of items to skip before taking the number of items specified by the take query param'
+        required: false
+        example: 6
+        type: integer
+        custom: []
+      take:
+        name: take
+        description: 'Number of items to return. Example 6'
+        required: false
+        example: 3
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      category: marathons
+      start_date: '"22-02-2018"'
+      end_date: '"22-02-2023"'
+      price:
+        - 12
+        - 80
+      radius:
+        - 12
+        - 80
+      virtual_events: include
+      skip: 6
+      take: 3
+      page: 1
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: excepturi
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example: 27-05-2024
+        type: string
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Must be a valid date in the format <code>d-m-Y</code>. Must be a date after or equal to <code>start_date</code>.'
+        required: false
+        example: '2047-01-15'
+        type: string
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: false
+        example:
+          - 5
+        type: 'integer[]'
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: dolorem
+        type: string
+        custom: []
+      location:
+        name: location
+        description: ''
+        required: false
+        example: null
+        type: object
+        custom: []
+      location.latitude:
+        name: location.latitude
+        description: ''
+        required: false
+        example: 6560513.0108902
+        type: number
+        custom: []
+      location.longitude:
+        name: location.longitude
+        description: ''
+        required: false
+        example: 247161.0
+        type: number
+        custom: []
+      radius:
+        name: radius
+        description: ''
+        required: false
+        example:
+          - 10
+        type: 'integer[]'
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Must be one of <code>include</code>, <code>exclude</code>, or <code>only</code>.'
+        required: false
+        example: exclude
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      skip:
+        name: skip
+        description: ''
+        required: false
+        example: 9
+        type: integer
+        custom: []
+      take:
+        name: take
+        description: ''
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 82
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 32
+        type: integer
+        custom: []
+      image_versions:
+        name: image_versions
+        description: 'Must be one of <code>mobile</code>, <code>tablet</code>, <code>desktop</code>, or <code>card</code>.'
+        required: true
+        example:
+          - mobile
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      name: excepturi
+      start_date: 27-05-2024
+      end_date: '2047-01-15'
+      price:
+        - 5
+      region: dolorem
+      location:
+        latitude: 6560513.0108902
+        longitude: 247161.0
+      radius:
+        - 10
+      virtual_events: exclude
+      date: et
+      skip: 9
+      take: 1
+      page: 82
+      per_page: 32
+      image_versions:
+        - mobile
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"status":false,"message":"Please resolve the warnings!","errors":{"category":["The category is invalid."],"end_date":["The end date does not match the format d-m-Y."],"price":["The price must contain 2 items."],"region":["The region is invalid."],"radius":["The radius must contain 2 items."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events/calendar
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The events calendar.'
+      description: 'Gets events for the requested month alongside those for the previous and the next month.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      month_year:
+        name: month_year
+        description: 'Filter by month_year.'
+        required: false
+        example: 11-2022
+        type: string
+        custom: []
+      name:
+        name: name
+        description: 'Filter by name. The name to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Filter by city ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: 'Filter by venue ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      experience:
+        name: experience
+        description: 'Filter by experience ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      month_year: 11-2022
+      page: 1
+    bodyParameters:
+      month_year:
+        name: month_year
+        description: 'Must be a valid date in the format <code>m-Y</code>.'
+        required: true
+        example: 05-2024
+        type: string
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: false
+        example: eum
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: doloremque
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: odio
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: adipisci
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: veritatis
+        type: string
+        custom: []
+      experience:
+        name: experience
+        description: ''
+        required: false
+        example: est
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 26
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      month_year: 05-2024
+      name: eum
+      category: doloremque
+      region: odio
+      city: adipisci
+      venue: veritatis
+      experience: est
+      page: 19
+      per_page: 26
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"status":false,"message":"Please resolve the warnings!","errors":{"category":["The category is invalid."],"region":["The region is invalid."],"city":["The city is invalid."],"venue":["The venue is invalid."],"experience":["The experience is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events/upcoming
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The upcoming events.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      date:
+        name: date
+        description: 'Filter by date. Must be one of newest, oldest, this_year, next_year, next_3_months, next_6_months, 2022-09, 2022-10.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters:
+      date:
+        name: date
+        description: ''
+        required: false
+        example: velit
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 27
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      date: velit
+      page: 19
+      per_page: 27
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":true,"message":"The list of upcoming events","data":{"events":{"current_page":19,"data":[],"first_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming?page=1","links":[{"url":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming?page=18","label":"&laquo; Previous","active":false},{"url":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming?page=1","label":"1","active":false},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming","per_page":27,"prev_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/upcoming?page=18","to":null,"total":0,"query_params":{"page":1}}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events/next
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The next events.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters:
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
+      image_versions:
+        name: image_versions
+        description: 'Must be one of <code>mobile</code>, <code>tablet</code>, <code>desktop</code>, or <code>card</code>.'
+        required: true
+        example:
+          - mobile
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      per_page: 10
+      image_versions:
+        - mobile
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":true,"message":"The list of next events","data":{"events":{"current_page":1,"data":[],"first_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/next?page=1","from":null,"last_page":1,"last_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/next?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/api.test\/api\/v1\/client\/events\/next?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/api.test\/api\/v1\/client\/events\/next","per_page":10,"prev_page_url":null,"to":null,"total":0,"query_params":{"page":1}}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events/popular
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The most popular events.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      image_versions:
+        name: image_versions
+        description: 'The image versions to return.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        custom: []
+    cleanQueryParameters:
+      page: 1
+      image_versions:
+        - consequatur
+    bodyParameters:
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
+      image_versions:
+        name: image_versions
+        description: 'Must be one of <code>mobile</code>, <code>tablet</code>, <code>desktop</code>, or <code>card</code>.'
+        required: true
+        example:
+          - card
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      per_page: 10
+      image_versions:
+        - card
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":true,"message":"The list of popular events","data":{"current_page":1,"data":[],"first_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/popular?image_versions%5B0%5D=consequatur&page=1","from":null,"last_page":1,"last_page_url":"https:\/\/api.test\/api\/v1\/client\/events\/popular?image_versions%5B0%5D=consequatur&page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/api.test\/api\/v1\/client\/events\/popular?image_versions%5B0%5D=consequatur&page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/api.test\/api\/v1\/client\/events\/popular","per_page":10,"prev_page_url":null,"to":null,"total":0,"query_params":{"page":1,"image_versions":["consequatur"]}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/client/events/{event}'
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get an event's details."
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+      X-Platform-User-Identifier-Key: RTHUB.v1.98591b54-db61-46d4-9d29-47a8a7f325a8.1675084780
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: quas
+        type: string
+        custom: []
+      event_slug:
+        name: event_slug
+        description: 'The slug of the event.'
+        required: true
+        example: lee-valley-velopark-10-mile-september
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: quas
+      event_slug: lee-valley-velopark-10-mile-september
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"No result(s) found.","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/client/events/ldt/checkout
+    metadata:
+      groupName: 'Events - Client'
+      groupDescription: 'The events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Checkout on Lets Do This'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ecetps:
+        name: ecetps
+        description: ''
+        required: true
+        example: a
+        type: string
+        custom: []
+      email:
+        name: email
+        description: "The participant's email address. Required with user is not authenticated. Only the email property is required for the RunThrough site. Must be a valid email address."
+        required: true
+        example: jameswhite@gmail.com
+        type: string
+        custom: []
+      'ecetps[].ref':
+        name: 'ecetps[].ref'
+        description: (required).
+        required: true
+        example: dicta
+        type: string
+        custom: []
+      'ecetps[].quantity':
+        name: 'ecetps[].quantity'
+        description: 'Must be at least 1.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      ecetps: a
+      email: jameswhite@gmail.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,231 @@
+name: Analytics
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/analytics/pages/{page_ref}/interact'
+    metadata:
+      groupName: Analytics
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Capture a page Interaction'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+      X-Platform-User-Identifier-Key: RTHUB.v1.98591b54-db61-46d4-9d29-47a8a7f325a8.1675084780
+    urlParameters:
+      page_ref:
+        name: page_ref
+        description: 'The ref attribute of the page.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      page_ref: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters:
+      interaction_type:
+        name: interaction_type
+        description: 'The type of interaction being captured on the frontend.'
+        required: true
+        example: read_more_about
+        type: string
+        custom: []
+    cleanQueryParameters:
+      interaction_type: read_more_about
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"The page was not found!","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g64DkVZ6Pd5ah8Eb3fce1av'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/analytics/events/{event_ref}/interact'
+    metadata:
+      groupName: Analytics
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Capture an event Interaction'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+      X-Platform-User-Identifier-Key: RTHUB.v1.98591b54-db61-46d4-9d29-47a8a7f325a8.1675084780
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: 'The ref attribute of the event.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters:
+      interaction_type:
+        name: interaction_type
+        description: 'The type of interaction being captured on the frontend.'
+        required: true
+        example: read_more_about
+        type: string
+        custom: []
+    cleanQueryParameters:
+      interaction_type: read_more_about
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"The event was not found!","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6f36Vvgb1hPaEk8dc5Dea4Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/analytics/pages/{page_ref}/view'
+    metadata:
+      groupName: Analytics
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Capture a page view'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+      X-Platform-User-Identifier-Key: RTHUB.v1.98591b54-db61-46d4-9d29-47a8a7f325a8.1675084780
+    urlParameters:
+      page_ref:
+        name: page_ref
+        description: 'The ref attribute of the page.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      page_ref: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"The page was not found!","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 15g4dhP8v66D3kcbVaeafZE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/analytics/events/{event_ref}/view'
+    metadata:
+      groupName: Analytics
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Capture an Event view'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+      X-Platform-User-Identifier-Key: RTHUB.v1.98591b54-db61-46d4-9d29-47a8a7f325a8.1675084780
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: 'The ref attribute of the event.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"The event was not found!","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1Pabgv5EV4d6c86hZfkae3D'
+    controller: null
+    method: null
+    route: null
+    custom: []

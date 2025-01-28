@@ -1,0 +1,1 @@
+Your account manager has renewed your {{ trim(preg_replace('/([A-Z])/', ' $1', $charity->latestCharityMembership->name)) }} membership which is now active for another {{ $charity->latestCharityMembership == \App\Enums\CharityMembershipTypeEnum::TwoYear ? 24 : 12 }} months.

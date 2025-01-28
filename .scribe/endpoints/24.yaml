@@ -1,0 +1,1384 @@
+name: Redirects
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/redirects
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Redirects'
+      description: 'Get paginated list of redirects.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      soft_delete:
+        name: soft_delete
+        description: 'The soft delete status for the redirect.'
+        required: false
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'The hard delete status for the redirect.'
+        required: false
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Filter by specifying a status.'
+        required: false
+        example: 'single,collection'
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Specifying a keyword similar to model name, target_url, or redirect_url.'
+        required: false
+        example: 'https://somelink.test'
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Overriding the default (10) number of listings per-page.'
+        required: false
+        example: '20'
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'created_at:desc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      soft_delete: temporal
+      hard_delete: 'temporal,permanent'
+      type: 'single,collection'
+      deleted: with
+      term: 'https://somelink.test'
+      per_page: '20'
+      order_by: 'created_at:desc'
+    bodyParameters:
+      status:
+        name: status
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>single</code> or <code>collection</code>.'
+        required: true
+        example: collection
+        type: string
+        custom: []
+    cleanBodyParameters:
+      status: temporal
+      type: collection
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3bZ8V651aDfkvaPEdhgce46'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/redirects/{redirect}/show'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Redirect'
+      description: 'Display the specified redirect.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      redirect:
+        name: redirect
+        description: 'The ref of the redirect.'
+        required: true
+        example: 9913d099-ae76-46c9-bb2b-eb6f266b2cbf
+        type: string
+        custom: []
+    cleanUrlParameters:
+      redirect: 9913d099-ae76-46c9-bb2b-eb6f266b2cbf
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Efvb4kDVeZ65ga1c638hPad'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/redirects/create
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Redirect Options'
+      description: 'Get options for redirect creation.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g8hadVc6D5Ef1ekPZ3bva4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/redirects/store
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'The soft delete status for the redirect.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'The hard delete status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: 'temporal,permanent'
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 15
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6v348PkEhgf6VDaced5Z1ab'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/redirects/store-many
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Multiple Entity Redirects.'
+      description: 'Add a redirect to multiple entities in the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'Must be a valid URL.'
+        required: true
+        example: 'http://www.koch.com/repellendus-repudiandae-nulla-fugit-ipsam-magnam-rerum-porro'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'Must be a valid URL.'
+        required: true
+        example: 'https://kunde.com/qui-cum-nisi-enim-a-odit.html'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>single</code> or <code>collection</code>.'
+        required: true
+        example: single
+        type: string
+        custom: []
+      model:
+        name: model
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: 'The array of redirect.'
+        required: true
+        example:
+          - corrupti
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      target_url: 'http://www.koch.com/repellendus-repudiandae-nulla-fugit-ipsam-magnam-rerum-porro'
+      redirect_url: 'https://kunde.com/qui-cum-nisi-enim-a-odit.html'
+      soft_delete: temporal
+      hard_delete: temporal
+      type: single
+      model:
+        id: 14
+      models:
+        - corrupti
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kPEgdDbZfa66ec8Vh5v41a3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/portal/redirects/{redirect_ref}/update'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update redirect'
+      description: 'Update the specified redirect.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      redirect_ref:
+        name: redirect_ref
+        description: ''
+        required: true
+        example: provident
+        type: string
+        custom: []
+    cleanUrlParameters:
+      redirect_ref: provident
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: false
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: false
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'The soft delete status for the redirect.'
+        required: false
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'The hard delete status for the redirect.'
+        required: false
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: false
+        example: 'single,collection'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: 'temporal,permanent'
+      type: 'single,collection'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vhaf6bc65Zg3P8akd1vEeD4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/redirects/delete
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Redirects'
+      description: 'Remove multiple redirects by specified ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      permanently:
+        name: permanently
+        description: 'Optionally specifying to force-delete model, instead of the default soft-delete.'
+        required: false
+        example: '1'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      permanently: '1'
+    bodyParameters:
+      redirects_ids:
+        name: redirects_ids
+        description: 'The ids of the redirects to be deleted.'
+        required: true
+        example:
+          - 1
+          - 2
+          - 3
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      redirects_ids:
+        - 1
+        - 2
+        - 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gb36Dak6ehdv8E5cVa4P1fZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Event Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: fugit
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: fugit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 20
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: temporal
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 20
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Eeh6v1Vb5aPa34Dkdf6cZg8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/categories/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Event Category Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: dolore
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: permanent
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 3
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: permanent
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 3
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z3vkPV854eafDb6Echga6d1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/regions/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Region Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: permanent
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: permanent
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 18
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EP1Z6a5Vkd4vg3h86afDbec'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/cities/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup City Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: 987b93b3-d31c-4530-809b-156e1e7ad80e
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 987b93b3-d31c-4530-809b-156e1e7ad80e
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: temporal
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 17
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fVhv6e3aaEdcPZ6gb4185Dk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/venues/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Venue Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: 987a4070-1092-4e2a-9a81-faf3cbae77e8
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 987a4070-1092-4e2a-9a81-faf3cbae77e8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 3
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: temporal
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 3
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hZvdV86a654DE1afgb3kecP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/combinations/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Combination Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: recusandae
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: recusandae
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: permanent
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 2
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: permanent
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 2
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z6gf5hab14PD6Ekave8d3cV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/pages/{ref}/setup-redirect'
+    metadata:
+      groupName: Redirects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Setup Page Redirect.'
+      description: 'Add a new redirect to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: enim
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: enim
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      target_url:
+        name: target_url
+        description: 'The target url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      redirect_url:
+        name: redirect_url
+        description: 'The redirect url for the redirect.'
+        required: true
+        example: 'https://google.com'
+        type: string
+        custom: []
+      soft_delete:
+        name: soft_delete
+        description: 'Must be one of <code>temporal</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      hard_delete:
+        name: hard_delete
+        description: 'Must be one of <code>temporal</code> or <code>permanent</code>.'
+        required: true
+        example: temporal
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'The type for the redirect.'
+        required: true
+        example: 'single,collection'
+        type: string
+        custom: []
+      model:
+        name: model
+        description: 'The object representation of the entity being redirected.'
+        required: true
+        example:
+          name: Event
+          ref: event_1
+        type: object
+        custom: []
+      model.id:
+        name: model.id
+        description: ''
+        required: true
+        example: 7
+        type: integer
+        custom: []
+      models:
+        name: models
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: 'The status for the redirect.'
+        required: true
+        example: 'temporal,permanent'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      target_url: 'https://google.com'
+      redirect_url: 'https://google.com'
+      soft_delete: temporal
+      hard_delete: temporal
+      type: 'single,collection'
+      model:
+        name: Event
+        ref: event_1
+        id: 7
+      status: 'temporal,permanent'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 65eEacdkf8DZ3P46hVvba1g'
+    controller: null
+    method: null
+    route: null
+    custom: []

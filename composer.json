@@ -1,0 +1,101 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "ext-pcntl": "*",
+        "archtechx/enums": "^0.3.0",
+        "aws/aws-sdk-php": "*",
+        "bacon/bacon-qr-code": "^2.0",
+        "barryvdh/laravel-dompdf": "^2.0",
+        "bkwld/cloner": "^3.10",
+        "codexshaper/laravel-woocommerce": "^3.0",
+        "crazybooot/base64-validation": "^1.0",
+        "doctrine/dbal": "^3.5",
+        "guzzlehttp/guzzle": "^7.5",
+        "halaxa/json-machine": "^1.1",
+        "intervention/validation": "^3.2",
+        "jenssegers/agent": "^2.6",
+        "jordanbrauer/unit-converter": "^0.9.0",
+        "laravel/framework": "^9.2",
+        "laravel/passport": "^10.3",
+        "laravel/sanctum": "^2.14.1",
+        "laravel/scout": "^10.2",
+        "laravel/slack-notification-channel": "^2.5",
+        "laravel/socialite": "^5.5",
+        "laravel/telescope": "^4.15",
+        "laravel/tinker": "^2.7",
+        "laravel/ui": "^3.4",
+        "league/flysystem-aws-s3-v3": "^3.22",
+        "maatwebsite/excel": "^3.1",
+        "masbug/flysystem-google-drive-ext": "^2.2",
+        "matanyadaev/laravel-eloquent-spatial": "^2.10",
+        "mtownsend/read-time": "^2.0",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "propaganistas/laravel-phone": "^4.3",
+        "psr/simple-cache": "^1.0",
+        "spatie/laravel-activitylog": "^4.7",
+        "spatie/laravel-backup": "^8.1",
+        "stevebauman/location": "^6.5",
+        "stripe/stripe-php": "^13.2",
+        "twilio/sdk": "^6.44"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "knuckleswtf/scribe": "^4.12",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\Traits\\": "database/traits/"
+        },
+        "files": [
+            "app/Http/Helpers/ApiClient.php",
+            "app/Http/Helpers/GeneralHelper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "laravel/telescope"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

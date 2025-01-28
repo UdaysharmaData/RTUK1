@@ -1,0 +1,594 @@
+name: Authentication
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/login
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Login
+      description: |-
+        Handle a login request to the application. Below are the logins of users with different roles. PS: All the users have a common password which is "password".
+
+        Administrator: Mark@runforcharity.com
+
+        Developer: developer@wearedamage.com
+
+        Account Manager: marc@runforcharity.com
+
+        Account Manager: freddie@runforcharity.com [WWF]
+
+        Charity: teampanda@wwf.org.uk [WWF]
+
+        Charity User: Joemcdermott@macmillan.org.uk [Macmillan Cancer Support]
+
+        Event Manager: matt@runthrough.co.uk
+
+        Participant: norberth.t@gmail.com
+
+        Participant: fharle_88@hotmail.co.uk
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The email of the User.'
+        required: true
+        example: Mark@runforcharity.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The password of the User.'
+        required: true
+        example: Password.0!
+        type: string
+        custom: []
+      totp_code:
+        name: totp_code
+        description: 'optional The totp code is required only if the user has enabled a 2fa method.'
+        required: false
+        example: pariatur
+        type: string
+        custom: []
+      social_auth:
+        name: social_auth
+        description: 'optional The social_auth is required only if the user is trying to login with a social account.'
+        required: false
+        example:
+          - dignissimos
+        type: 'string[]'
+        custom: []
+      social_auth.source:
+        name: social_auth.source
+        description: 'required_with:social_auth The social_auth.source is required only if the user is trying to login with a social account.'
+        required: false
+        example: facebook
+        type: string
+        custom: []
+      social_auth.token:
+        name: social_auth.token
+        description: 'required_with:social_auth The social_auth.token is required only if the user is trying to login with a social account. Example: 123456 or ZADFGVDS(recovery code)'
+        required: false
+        example: '123456 or ZADFGVDS(recovery code)'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: Mark@runforcharity.com
+      password: Password.0!
+      totp_code: pariatur
+      social_auth:
+        - dignissimos
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/register
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a user'
+      description: 'Handle a registration request for the application.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'The first name of the user.'
+        required: true
+        example: Wendy
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: 'The last name of the user.'
+        required: true
+        example: Mike
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'The email of the User.'
+        required: true
+        example: user@email.com
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: 'The phone number of the User.'
+        required: true
+        example: '+12333333333'
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The password of the User.'
+        required: true
+        example: 123@!PASSWORD
+        type: string
+        custom: []
+      social_auth:
+        name: social_auth
+        description: 'optional The social_auth is required only if the user is trying to register with a social account.'
+        required: false
+        example:
+          - qui
+        type: 'string[]'
+        custom: []
+      social_auth.source:
+        name: social_auth.source
+        description: 'required_with:social_auth The social_auth.source is required only if the user is trying to register with a social account.'
+        required: false
+        example: facebook
+        type: string
+        custom: []
+      social_auth.token:
+        name: social_auth.token
+        description: 'required_with:social_auth The social_auth.token is required only if the user is trying to register with a social account.'
+        required: false
+        example: '123456 or ZADFGVDS(recovery code)'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      first_name: Wendy
+      last_name: Mike
+      email: user@email.com
+      phone: '+12333333333'
+      password: 123@!PASSWORD
+      social_auth:
+        - qui
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/account/password/create
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Account Password Set up'
+      description: 'Allow user set up a password for thier account.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The user email.'
+        required: true
+        example: user@email.com
+        type: string
+        custom: []
+      code:
+        name: code
+        description: 'The verification code received by User.'
+        required: true
+        example: '176814'
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The password of the User.'
+        required: true
+        example: '123&kPASSWORD'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: user@email.com
+      code: '176814'
+      password: '123&kPASSWORD'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/account/password/resend-setup-code
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Resend Password Set up Code'
+      description: 'Resend code to user.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The user email.'
+        required: true
+        example: user@email.com
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: user@email.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/password/email
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Request reset code'
+      description: 'Send a reset code to the given user who forgot their password.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: "Specifies user's email attribute."
+        required: true
+        example: sdk@email.com
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: sdk@email.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/password/reset
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Reset Password'
+      description: 'Complete the password reset request initiated by the user.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The email of the User.'
+        required: true
+        example: user@email.com
+        type: string
+        custom: []
+      token:
+        name: token
+        description: 'Token sent in response from requesting a reset code.'
+        required: true
+        example: 357742ecb53be20ad70e4b0c233a2bcee289d8f5aa3e2f844c527019f5d7496
+        type: string
+        custom: []
+      code:
+        name: code
+        description: 'Code received in mail after requesting reset code.'
+        required: true
+        example: '759210'
+        type: string
+        custom: []
+      password:
+        name: password
+        description: "Specifies user's proposed password."
+        required: true
+        example: newPASSword123@
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: user@email.com
+      token: 357742ecb53be20ad70e4b0c233a2bcee289d8f5aa3e2f844c527019f5d7496
+      code: '759210'
+      password: newPASSword123@
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/logout
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Logout
+      description: 'Log the user out of the application.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      all:
+        name: all
+        description: 'If the User wants to revoke all their active access tokens.'
+        required: false
+        example: |-
+          true
+          <aside class="notice">?all=true param essentially logs out all currently logged-in devices</aside>
+        type: string
+        custom: []
+    cleanQueryParameters:
+      all: |-
+        true
+        <aside class="notice">?all=true param essentially logs out all currently logged-in devices</aside>
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6ac5fD1Vh4gPkvE6e8ba3Zd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/users/{user_ref}/remove-devices'
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove Devices'
+      description: 'Disconnect multiple devices from accessing user account.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      user_ref:
+        name: user_ref
+        description: ''
+        required: true
+        example: 975dcf22-21a8-406a-9a83-6b943cea0508
+        type: string
+        custom: []
+      user:
+        name: user
+        description: "Specifies user's ref attribute."
+        required: true
+        example: 975dcf12-eda2-4437-8c96-6df4e790d074
+        type: string
+        custom: []
+    cleanUrlParameters:
+      user_ref: 975dcf22-21a8-406a-9a83-6b943cea0508
+      user: 975dcf12-eda2-4437-8c96-6df4e790d074
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      devices:
+        name: devices
+        description: ''
+        required: true
+        example:
+          - ipsa
+        type: 'string[]'
+        custom: []
+      'devices[]':
+        name: 'devices[]'
+        description: 'The array of valid ids belonging to devices to be disconnected.'
+        required: true
+        example: '[1, 2, 3]'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      devices:
+        - ipsa
+      'devices[]': '[1, 2, 3]'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zbgc6EaP6a381ke5VfvhdD4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/account/verify
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Account Verification'
+      description: "Mark the authenticated user's email address as verified."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      type:
+        name: type
+        description: 'The verification code received by User.'
+        required: true
+        example: email
+        type: string
+        custom: []
+    cleanQueryParameters:
+      type: email
+    bodyParameters:
+      code:
+        name: code
+        description: 'The verification code received by User.'
+        required: true
+        example: '17681'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      code: '17681'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z8Pca3gV16564vEaehfdbDk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/account/verification/resend
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Redo Verification'
+      description: 'Resend verification code to user.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4vcg3k6bdZ51EV6eah8aDfP'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,2242 @@
+name: Charities
+description: 'Manages charities on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/all
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated charities for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      active_membership:
+        name: active_membership
+        description: 'Filter by active membership.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      membership_type:
+        name: membership_type
+        description: 'Filter by membership type.'
+        required: false
+        example: premium
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      active_membership: true
+      membership_type: premium
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: quo
+        type: string
+        custom: []
+      active_membership:
+        name: active_membership
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 36
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 74
+        type: integer
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      membership_type:
+        name: membership_type
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: quo
+      active_membership: false
+      page: 36
+      per_page: 74
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f1ZDvkdbh3645g6aEeaV8cP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of charities'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      membership_type:
+        name: membership_type
+        description: 'Filter by membership type. Must be one of premium, classic, partner, two_year.'
+        required: false
+        example: premium
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by status. Example 1'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      category:
+        name: category
+        description: 'Filter by charity category slug.'
+        required: false
+        example: cancer-children-youth
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      membership_type: premium
+      status: false
+      category: cancer-children-youth
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: illo
+        type: string
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 24
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 65
+        type: integer
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      membership_type:
+        name: membership_type
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: illo
+      status: true
+      page: 24
+      per_page: 65
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DabP8d4ghE3f6Vcka6eZ1v5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/create
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a charity'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zdh13bE6V68favDeakc5P4g'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charities/{id}/details'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get a charity's details."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f8e365gada4Z16PchvbEVDk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/profile/update'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update charity profile.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The charity name.'
+        required: true
+        example: WWF
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'The charity owner email address. Must be a valid email address.'
+        required: true
+        example: teampanda@wwf.org.uk
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'The charity category (slug).'
+        required: true
+        example: environment-conservation
+        type: string
+        custom: []
+      support_email:
+        name: support_email
+        description: 'The charity email address (support email). Must be a valid email address.'
+        required: true
+        example: johndoe237@gmail.com
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'The charity address. Must not be greater than 150 characters.'
+        required: true
+        example: 'Fourth Floor, Maya House, 134-138 Borough High St'
+        type: string
+        custom: []
+      postcode:
+        name: postcode
+        description: 'Must not be greater than 20 characters.'
+        required: true
+        example: 'SE1 1LB'
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: true
+        example: Swansea
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: true
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: ''
+        required: true
+        example: '+447815176034'
+        type: string
+        custom: []
+      finance_contact_name:
+        name: finance_contact_name
+        description: ''
+        required: false
+        example: porro
+        type: string
+        custom: []
+      finance_contact_email:
+        name: finance_contact_email
+        description: 'Must be a valid email address.'
+        required: false
+        example: xchristiansen@example.com
+        type: string
+        custom: []
+      finance_contact_phone:
+        name: finance_contact_phone
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      show_in_external_feeds:
+        name: show_in_external_feeds
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      show_in_vmm_external_feeds:
+        name: show_in_vmm_external_feeds
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      external_strapline:
+        name: external_strapline
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: Sts@2022
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: WWF
+      email: teampanda@wwf.org.uk
+      category: environment-conservation
+      support_email: johndoe237@gmail.com
+      address: 'Fourth Floor, Maya House, 134-138 Borough High St'
+      postcode: 'SE1 1LB'
+      city: Swansea
+      country: 'United Kingdom'
+      phone: '+447815176034'
+      finance_contact_name: porro
+      finance_contact_email: xchristiansen@example.com
+      show_in_external_feeds: true
+      show_in_vmm_external_feeds: true
+      external_strapline: false
+      password: Sts@2022
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer echEgbdV8DaZf34P6a65kv1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charities/{id}/delete'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a charity (Soft deletes)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 336
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 336
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Davk3ZbdV8EPf165c6ageh4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charities/{id}/delete/force'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a charity (Permanently)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 336
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 336
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hcb6E5Zd4afgeD3av8V6P1k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/branding'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get branding'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P4h3e6k8ZVd5vfgEbDc1a6a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/branding'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update branding'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      primary_color:
+        name: primary_color
+        description: 'Primary header colour.'
+        required: true
+        example: '#3DFF1F'
+        type: string
+        custom: []
+      secondary_color:
+        name: secondary_color
+        description: 'Secondary header colour.'
+        required: true
+        example: '#FF4A1C'
+        type: string
+        custom: []
+      logo:
+        name: logo
+        description: ''
+        required: true
+        example: reprehenderit
+        type: string
+        custom: []
+    cleanBodyParameters:
+      primary_color: '#3DFF1F'
+      secondary_color: '#FF4A1C'
+      logo: reprehenderit
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer faZPcDh5edbka3648E6Vgv1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/content'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get content'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6VgD5d8bc1v3f4Pa6EhakZe'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/content'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update content'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      mission_values:
+        name: mission_values
+        description: 'The charity mission values.'
+        required: true
+        example: |-
+          Qui magna et do dolor cillum fugiat nisi sint ullamco eiusmod est. Sint elit dolore ea officia aute ipsum qui officia. Dolor nisi cillum reprehenderit elit eu ut commodo laboris Lorem aliquip. Excepteur exercitation elit Lorem culpa sit. Consequat consectetur cillum in aute incididunt magna dolor irure reprehenderit ex aute est veniam velit. Reprehenderit non culpa eiusmod duis ad pariatur non qui in incididunt in voluptate est nostrud.
+                              Enim amet labore pariatur est dolore qui. Occaecat ipsum aliquip ipsum sit ipsum est nostrud tempor tempor. Pariatur pariatur veniam velit aute ex do laborum sint est deserunt consectetur do exercitation.
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The charity description.'
+        required: true
+        example: |-
+          <p>In dolor in ad cillum aliquip nostrud. Fugiat exercitation in pariatur commodo id. Quis ullamco nisi non reprehenderit non nisi. Sunt Lorem irure esse sunt velit ut quis elit deserunt consectetur excepteur. Duis nisi fugiat aliquip magna reprehenderit magna. Aliquip magna ad velit sit elit incididunt cupidatat ea commodo elit commodo. Dolor proident amet et duis occaecat irure nulla cillum et tempor.</p>
+                              <p>Qui magna et do dolor cillum fugiat nisi sint ullamco eiusmod est. Sint elit dolore ea officia aute ipsum qui officia. Dolor nisi cillum reprehenderit elit eu ut commodo laboris Lorem aliquip. Excepteur exercitation elit Lorem culpa sit. Consequat consectetur cillum in aute incididunt magna dolor irure reprehenderit ex aute est veniam velit. Reprehenderit non culpa eiusmod duis ad pariatur non qui in incididunt in voluptate est nostrud.</p>
+        type: string
+        custom: []
+      video:
+        name: video
+        description: 'The charity video. Must be a valid URL.'
+        required: false
+        example: 'https://www.youtube.com/watch?v=qRidinG3PAw'
+        type: string
+        custom: []
+      donation_link:
+        name: donation_link
+        description: 'The link to the charity donation page.'
+        required: false
+        example: 'http://nader.com/illum-necessitatibus-voluptas-enim-amet'
+        type: string
+        custom: []
+      website:
+        name: website
+        description: 'The charity website url.'
+        required: false
+        example: 'http://www.wwf.org.uk/'
+        type: string
+        custom: []
+      socials:
+        name: socials
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      images:
+        name: images
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'The charity meta title.'
+        required: false
+        example: 'The meta title'
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'The charity meta description.'
+        required: false
+        example: 'The meta description'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: ''
+        required: false
+        example: dolores
+        type: string
+        custom: []
+      'socials[].platform':
+        name: 'socials[].platform'
+        description: 'Must be one of <code>google</code>, <code>facebook</code>, <code>twitter</code>, <code>instagram</code>, <code>tiktok</code>, <code>linkedin</code>, <code>youtube</code>, <code>vimeo</code>, or <code>github</code>.'
+        required: false
+        example: youtube
+        type: string
+        custom: []
+      'socials[].url':
+        name: 'socials[].url'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      mission_values: |-
+        Qui magna et do dolor cillum fugiat nisi sint ullamco eiusmod est. Sint elit dolore ea officia aute ipsum qui officia. Dolor nisi cillum reprehenderit elit eu ut commodo laboris Lorem aliquip. Excepteur exercitation elit Lorem culpa sit. Consequat consectetur cillum in aute incididunt magna dolor irure reprehenderit ex aute est veniam velit. Reprehenderit non culpa eiusmod duis ad pariatur non qui in incididunt in voluptate est nostrud.
+                            Enim amet labore pariatur est dolore qui. Occaecat ipsum aliquip ipsum sit ipsum est nostrud tempor tempor. Pariatur pariatur veniam velit aute ex do laborum sint est deserunt consectetur do exercitation.
+      description: |-
+        <p>In dolor in ad cillum aliquip nostrud. Fugiat exercitation in pariatur commodo id. Quis ullamco nisi non reprehenderit non nisi. Sunt Lorem irure esse sunt velit ut quis elit deserunt consectetur excepteur. Duis nisi fugiat aliquip magna reprehenderit magna. Aliquip magna ad velit sit elit incididunt cupidatat ea commodo elit commodo. Dolor proident amet et duis occaecat irure nulla cillum et tempor.</p>
+                            <p>Qui magna et do dolor cillum fugiat nisi sint ullamco eiusmod est. Sint elit dolore ea officia aute ipsum qui officia. Dolor nisi cillum reprehenderit elit eu ut commodo laboris Lorem aliquip. Excepteur exercitation elit Lorem culpa sit. Consequat consectetur cillum in aute incididunt magna dolor irure reprehenderit ex aute est veniam velit. Reprehenderit non culpa eiusmod duis ad pariatur non qui in incididunt in voluptate est nostrud.</p>
+      video: 'https://www.youtube.com/watch?v=qRidinG3PAw'
+      donation_link: 'http://nader.com/illum-necessitatibus-voluptas-enim-amet'
+      website: 'http://www.wwf.org.uk/'
+      meta:
+        title: 'The meta title'
+        description: 'The meta description'
+        keywords: dolores
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer h8baDcv6E3VdeaZ6kP154fg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charities/{id}/images/{upload_id}/delete'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Remove the logo or an image from the charity's images."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+      upload_id:
+        name: upload_id
+        description: 'The id of the image.'
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+      upload_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zg61fED3v4khP8dabeaV56c'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/memberships'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get memberships'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer avgh6fc6dV1DZE8Pa53b4ke'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/fundraising/platform'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get fundraising platform'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5e8v3bP46EcV1Zd6hfgakaD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/fundraising/platform/update'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update fundraising platform'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      fundraising_platform:
+        name: fundraising_platform
+        description: |-
+          Must be one of just_giving, virgin_money_giving, custom.
+          TODO: Update this after discussing with lead. It has been noticed that only the custom option is used (from the portal) and database records only have the custom or null options as values. Must be one of <code>just_giving</code>, <code>virgin_money_giving</code>, or <code>custom</code>.
+        required: true
+        example: custom
+        type: string
+        custom: []
+      fundraising_platform_url:
+        name: fundraising_platform_url
+        description: 'Must be a valid URL.'
+        required: true
+        example: 'https://www.justgiving.com/wwf'
+        type: string
+        custom: []
+      fundraising_ideas_url:
+        name: fundraising_ideas_url
+        description: 'Must be a valid URL.'
+        required: false
+        example: 'https://www.justgiving.com/wwf'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      fundraising_platform: custom
+      fundraising_platform_url: 'https://www.justgiving.com/wwf'
+      fundraising_ideas_url: 'https://www.justgiving.com/wwf'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer keEZdDfacP6bV6hg1345a8v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/events/included'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get eventsIncluded (the only_included_charities events the charity is allowed to run).'
+      description: 'That is, the events that can only be run by some charities (only_included_charities) for which the charity is among).'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b456ZVg1afEeavDdh8cP36k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charities/{id}/events/included/update'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update eventsIncluded (the only_included_charities events the charity is allowed to run).'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      event_ids:
+        name: event_ids
+        description: ''
+        required: false
+        example:
+          - 11
+        type: 'integer[]'
+        custom: []
+    cleanBodyParameters:
+      event_ids:
+        - 11
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3Zd4aV66DcEkfga18eh5bPv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/external/enquiry/notifications/toggle'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Toggle external enquiries notification frequency (settings)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      external_enquiry_notification_settings:
+        name: external_enquiry_notification_settings
+        description: 'Must be one of <code>each</code>, <code>daily</code>, <code>weekly</code>, or <code>monthly</code>.'
+        required: true
+        example: weekly
+        type: string
+        custom: []
+    cleanBodyParameters:
+      external_enquiry_notification_settings: weekly
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 36cedvkZa1afVhbPED468g5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/complete/registration/notifications/toggle'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Toggle complete registration notification frequency (settings)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      complete_notifications:
+        name: complete_notifications
+        description: 'Must be one of <code>always</code>, <code>weekly</code>, or <code>monthly</code>.'
+        required: true
+        example: monthly
+        type: string
+        custom: []
+    cleanBodyParameters:
+      complete_notifications: monthly
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k6c4ZaE3agvh1V865dDfbPe'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/fundraising-email/integration/toggle'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Toggle fundraising emails integration settings'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      fundraising_emails_active:
+        name: fundraising_emails_active
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      fundraising_emails_active: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DfkZ66hgcvaP31beaVEd548'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/charity-checkout/integration/toggle'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'toggle charity checkout integration settings'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      charity_checkout_integration:
+        name: charity_checkout_integration
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      charity_checkout_integration: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bEhv65gaD8f43ZedVc1P6ak'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/call-notes'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get call notes'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6ahvke1cPE86bfa54gd3VDZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/call-notes/manager/update'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update manager call note.'
+      description: 'These are a charity call notes highlights often set by account managers.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      manager_call_notes:
+        name: manager_call_notes
+        description: ''
+        required: true
+        example: '26/07 - Spoke to Fru and he is chasing the invoice payment. 08/09 - Good Meeting with Jodie. Went through what to promote and also booked in meeting for bespoke virtual Santa Dash'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      manager_call_notes: '26/07 - Spoke to Fru and he is chasing the invoice payment. 08/09 - Good Meeting with Jodie. Went through what to promote and also booked in meeting for bespoke virtual Santa Dash'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fc8b6P43gd61DveEkVaha5Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charities/{id}/call-notes/create'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create/update a call note.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      note:
+        name: note
+        description: 'The message.'
+        required: false
+        example: '26/07 - Spoke to Fru and he is chasing the invoice payment'
+        type: string
+        custom: []
+      call:
+        name: call
+        description: 'Must be one of <code>23_months</code>, <code>21_months</code>, <code>18_months</code>, <code>15_months</code>, <code>12_months</code>, <code>11_months</code>, <code>8_months</code>, <code>5_months</code>, <code>2_months</code>, <code>1_month</code>, or <code>all</code>.'
+        required: true
+        example: 23_months
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>made_contact</code> or <code>no_answer</code>.'
+        required: true
+        example: no_answer
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'The year the call note was created. Must be 4 digits. Must be a valid date in the format <code>Y</code>. Must be a date after or equal to <code>2024</code>.'
+        required: true
+        example: 2022
+        type: string
+        custom: []
+    cleanBodyParameters:
+      note: '26/07 - Spoke to Fru and he is chasing the invoice payment'
+      call: 23_months
+      status: no_answer
+      year: 2022
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aaEeh6V6cfkb4PDgd5381vZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/{id}/call-notes/{call_note_id}/update'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a call note'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+      call_note_id:
+        name: call_note_id
+        description: 'The id of the call note.'
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+      call_note_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      note:
+        name: note
+        description: 'The message.'
+        required: false
+        example: '26/07 - Spoke to Fru and he is chasing the invoice payment'
+        type: string
+        custom: []
+      call:
+        name: call
+        description: 'Must be one of <code>23_months</code>, <code>21_months</code>, <code>18_months</code>, <code>15_months</code>, <code>12_months</code>, <code>11_months</code>, <code>8_months</code>, <code>5_months</code>, <code>2_months</code>, <code>1_month</code>, or <code>all</code>.'
+        required: true
+        example: 23_months
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>made_contact</code> or <code>no_answer</code>.'
+        required: true
+        example: no_answer
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'The year the call note was created. Must be 4 digits. Must be a valid date in the format <code>Y</code>. Must be a date after or equal to <code>2024</code>.'
+        required: true
+        example: 2022
+        type: string
+        custom: []
+    cleanBodyParameters:
+      note: '26/07 - Spoke to Fru and he is chasing the invoice payment'
+      call: 23_months
+      status: no_answer
+      year: 2022
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1bhE4gcPad6ekvD63f85ZVa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charities/{id}/call-notes/{call_note_id}/delete'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a call note'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+      call_note_id:
+        name: call_note_id
+        description: 'The id of the call note.'
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+      call_note_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 546hckPfaE3bDe6Z8Vgavd1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/export
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export Charities.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      membership_type:
+        name: membership_type
+        description: 'Filter by membership type.'
+        required: false
+        example: premium
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by status. Example 1'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      category:
+        name: category
+        description: 'Filter by charity category slug.'
+        required: false
+        example: cancer-children-youth
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by string.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters:
+      membership_type: premium
+      status: false
+      category: cancer-children-youth
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6a3eZV51vDfhPd8bg4kcaE6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/invoices'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the invoices of the charity.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bacdf4VhekDZva36EP856g1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/{id}/invoices/create'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create an invoice.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bPZd4k5cE81gV63heaaDf6v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charities/{id}/invoices/create'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store the invoice.'
+      description: 'Replaces postCreateInvoice method'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      description:
+        name: description
+        description: 'The description.'
+        required: false
+        example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        type: string
+        custom: []
+      charge_id:
+        name: charge_id
+        description: 'The charge_id.'
+        required: false
+        example: ch_1CUXhaKhPhk80DoJYypTBUf9
+        type: string
+        custom: []
+      issue_date:
+        name: issue_date
+        description: 'The date the invoice was created/issued. Must be a valid date in the format <code>d-m-Y</code>. Must be a date after <code>today</code>.'
+        required: true
+        example: 28-05-2024
+        type: string
+        custom: []
+      due_date:
+        name: due_date
+        description: 'The due date of the invoice. Must be a valid date in the format <code>d-m-Y</code>. Must be a date after or equal to <code>issue_date</code>.'
+        required: true
+        example: 11-06-2024
+        type: string
+        custom: []
+      price:
+        name: price
+        description: 'The invoice cost. Must be between 0 and 999999.99.'
+        required: true
+        example: 98879.97
+        type: number
+        custom: []
+      pdf:
+        name: pdf
+        description: ''
+        required: true
+        example: provident
+        type: string
+        custom: []
+      held:
+        name: held
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      send_on:
+        name: send_on
+        description: 'The date at which the invoice should be sent. Must be a valid date in the format <code>d-m-Y</code>. Must be a date after <code>today</code>.'
+        required: false
+        example: 03-06-2024
+        type: string
+        custom: []
+    cleanBodyParameters:
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      charge_id: ch_1CUXhaKhPhk80DoJYypTBUf9
+      issue_date: 28-05-2024
+      due_date: 11-06-2024
+      price: 98879.97
+      pdf: provident
+      held: false
+      send_on: 03-06-2024
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DkV3aEPZa5eb1g8d6cv6f4h'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charities/{id}/invoices/{invoice_id}/delete'
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete an invoice and refund the charity.'
+      description: 'TODO: Review this implementation after the Participant Model would have been created and while working on the invoice controller.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity.'
+        required: true
+        example: 335
+        type: integer
+        custom: []
+      invoice_id:
+        name: invoice_id
+        description: 'The id of the charity.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 335
+      invoice_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vc61dE5e8hgk36aZ4DbaVPf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/charities/all
+    metadata:
+      groupName: Charities
+      groupDescription: 'Manages charities on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated charities for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      active_membership:
+        name: active_membership
+        description: 'Filter by active membership.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      membership_type:
+        name: membership_type
+        description: 'Filter by membership type.'
+        required: false
+        example: premium
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      active_membership: true
+      membership_type: premium
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      active_membership:
+        name: active_membership
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 16
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 27
+        type: integer
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      membership_type:
+        name: membership_type
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: et
+      active_membership: true
+      page: 16
+      per_page: 27
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"status":false,"message":"Unauthorized","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vf34aZe6PE18gckbd56DahV'
+    controller: null
+    method: null
+    route: null
+    custom: []

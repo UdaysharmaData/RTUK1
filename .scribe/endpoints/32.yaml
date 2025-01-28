@@ -1,0 +1,2059 @@
+name: Participants
+description: 'Manages participants on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/participants
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of participants'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by state. Must be one of paid, complete, notified, incomplete, clearance.'
+        required: false
+        example: complete
+        type: string
+        custom: []
+      event:
+        name: event
+        description: 'Filter by event slug.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'Filter by charity slug.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      via:
+        name: via
+        description: 'Filter by added via. Must be one of partner_events, book_events, registration_page, external_enquiry_offer, team_invitation, website.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Filter by gender. Must be one of male, female.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Filter by tshirt_size. Must be one of xxxs, xxs, xs, sm, m, l, xl, xxl, xxxl.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Filter by payment_status. Must be one of unpaid, paid, waived, refunded, transferred.'
+        required: false
+        example: waived
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Filter by waive. Must be one of partially, completely.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Filter by waiver. Must be one of partner, charity, corporate.'
+        required: false
+        example: partner
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'first_name:desc,last_name:asc,full_name:desc'
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying year filter for when user was created.'
+        required: false
+        example: '2023'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying a period to filter users creation date by.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      state: live
+      status: complete
+      deleted: with
+      payment_status: waived
+      waive: completely
+      waiver: partner
+      order_by: 'first_name:desc,last_name:asc,full_name:desc'
+      year: '2023'
+      period: 24h
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: id
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>complete</code>, <code>notified</code>, <code>clearance</code>, <code>incomplete</code>, or <code>transferred</code>.'
+        required: false
+        example: transferred
+        type: string
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: archived
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: false
+        example: female
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Must be one of <code>xxxs</code>, <code>xxs</code>, <code>xs</code>, <code>sm</code>, <code>m</code>, <code>l</code>, <code>xl</code>, <code>xxl</code>, or <code>xxxl</code>.'
+        required: false
+        example: m
+        type: string
+        custom: []
+      event:
+        name: event
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'The ref of the charity. Must be one of .'
+        required: false
+        example: null
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 6
+        type: number
+        custom: []
+      via:
+        name: via
+        description: 'Must be one of <code>partner_events</code>, <code>book_events</code>, <code>registration_page</code>, <code>external_enquiry_offer</code>, <code>team_invitation</code>, <code>website</code>, or <code>transfer</code>.'
+        required: false
+        example: website
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Must be one of <code>unpaid</code>, <code>paid</code>, <code>waived</code>, <code>refunded</code>, or <code>transferred</code>.'
+        required: false
+        example: unpaid
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Must be one of <code>completely</code> or <code>partially</code>.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Must be one of <code>charity</code>, <code>corporate</code>, or <code>partner</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Must be one of <code>1h</code>, <code>6h</code>, <code>12h</code>, <code>24h</code>, <code>7d</code>, <code>30d</code>, <code>90d</code>, <code>180d</code>, <code>1y</code>, or <code>All</code>.'
+        required: false
+        example: 6h
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - ad
+        type: 'string[]'
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 44
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 32
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: id
+      status: transferred
+      state: archived
+      gender: female
+      tshirt_size: m
+      year: '2024'
+      month: 6
+      via: website
+      payment_status: unpaid
+      waive: completely
+      waiver: charity
+      period: 6h
+      deleted: without
+      order_by:
+        - ad
+      page: 44
+      per_page: 32
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6ZdckEDfP4V65bg183vahea'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/participants/{participant}/download'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Download a participant entry'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: ipsa
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: ipsa
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dva8fe6DEk1V5g6c3abh4ZP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/participants/{participant}/edit'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a participant'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: consequatur
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: consequatur
+      participant_ref: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DveghfEdcV643Z6bak581aP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/participants/{participant}/update'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a participant'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: inventore
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: inventore
+      participant_ref: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: Marc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: 'Roby AM'
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: ''
+        required: false
+        example: '447834418119'
+        type: string
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>partially_registered</code> or <code>fully_registered</code>.'
+        required: false
+        example: partially_registered
+        type: string
+        custom: []
+      profile:
+        name: profile
+        description: ''
+        required: false
+        example: []
+        type: object
+        custom: []
+      profile.gender:
+        name: profile.gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: false
+        example: male
+        type: string
+        custom: []
+      profile.dob:
+        name: profile.dob
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example: 27-05-2024
+        type: string
+        custom: []
+      profile.city:
+        name: profile.city
+        description: ''
+        required: false
+        example: dolor
+        type: string
+        custom: []
+      profile.state:
+        name: profile.state
+        description: ''
+        required: false
+        example: placeat
+        type: string
+        custom: []
+      profile.address:
+        name: profile.address
+        description: ''
+        required: true
+        example: perferendis
+        type: string
+        custom: []
+      profile.country:
+        name: profile.country
+        description: ''
+        required: false
+        example: aperiam
+        type: string
+        custom: []
+      profile.postcode:
+        name: profile.postcode
+        description: ''
+        required: false
+        example: est
+        type: string
+        custom: []
+      profile.nationality:
+        name: profile.nationality
+        description: ''
+        required: false
+        example: magni
+        type: string
+        custom: []
+      profile.occupation:
+        name: profile.occupation
+        description: ''
+        required: false
+        example: aut
+        type: string
+        custom: []
+      profile.passport_number:
+        name: profile.passport_number
+        description: ''
+        required: false
+        example: aliquam
+        type: string
+        custom: []
+      profile.ethnicity:
+        name: profile.ethnicity
+        description: 'Must be one of <code>white_british</code>, <code>white_other</code>, <code>asian_or_asian_british</code>, <code>prefer_not_to_say</code>, <code>mixed_or_multiple_ethnic_groups</code>, <code>black_or_black_british</code>, or <code>other_ethnic_group</code>.'
+        required: false
+        example: mixed_or_multiple_ethnic_groups
+        type: string
+        custom: []
+      weekly_physical_activity:
+        name: weekly_physical_activity
+        description: 'Must be one of <code>1 - 2 days</code>, <code>3 - 5 days</code>, or <code>6+ days</code>.'
+        required: false
+        example: '1 - 2 days'
+        type: string
+        custom: []
+      slogan:
+        name: slogan
+        description: ''
+        required: false
+        example: placeat
+        type: string
+        custom: []
+      club:
+        name: club
+        description: ''
+        required: false
+        example: rem
+        type: string
+        custom: []
+      emergency_contact_name:
+        name: emergency_contact_name
+        description: ''
+        required: false
+        example: 'John Doe'
+        type: string
+        custom: []
+      emergency_contact_phone:
+        name: emergency_contact_phone
+        description: ''
+        required: false
+        example: '07851081623'
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Must be one of <code>xxxs</code>, <code>xxs</code>, <code>xs</code>, <code>sm</code>, <code>m</code>, <code>l</code>, <code>xl</code>, <code>xxl</code>, or <code>xxxl</code>.'
+        required: false
+        example: xl
+        type: string
+        custom: []
+      user:
+        name: user
+        description: 'The refs of the user. Must be one of .'
+        required: true
+        example: maiores
+        type: string
+        custom: []
+      eec:
+        name: eec
+        description: 'The ref of the event event category. Must be one of .'
+        required: true
+        example: laboriosam
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'The ref of the charity. Must be one of .'
+        required: false
+        example: null
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Must be one of <code>unpaid</code>, <code>paid</code>, <code>waived</code>, <code>refunded</code>, or <code>transferred</code>.'
+        required: false
+        example: unpaid
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Must be one of <code>completely</code> or <code>partially</code>.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Must be one of <code>charity</code>, <code>corporate</code>, or <code>partner</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+      fee_type:
+        name: fee_type
+        description: 'Must be one of <code>local</code> or <code>international</code>.'
+        required: false
+        example: local
+        type: string
+        custom: []
+      preferred_heat_time:
+        name: preferred_heat_time
+        description: ''
+        required: false
+        example: iure
+        type: string
+        custom: []
+      raced_before:
+        name: raced_before
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      speak_with_coach:
+        name: speak_with_coach
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      hear_from_partner_charity:
+        name: hear_from_partner_charity
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reason_for_participating:
+        name: reason_for_participating
+        description: ''
+        required: false
+        example: aut
+        type: string
+        custom: []
+      estimated_finish_time:
+        name: estimated_finish_time
+        description: ''
+        required: false
+        example: accusamus
+        type: string
+        custom: []
+      added_via:
+        name: added_via
+        description: 'Must be one of <code>partner_events</code>, <code>book_events</code>, <code>registration_page</code>, <code>external_enquiry_offer</code>, <code>team_invitation</code>, <code>website</code>, or <code>transfer</code>.'
+        required: true
+        example: partner_events
+        type: string
+        custom: []
+      event_page:
+        name: event_page
+        description: ''
+        required: false
+        example: totam
+        type: string
+        custom: []
+      enable_family_registration:
+        name: enable_family_registration
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      custom_fields:
+        name: custom_fields
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      first_name: Marc
+      last_name: 'Roby AM'
+      phone: '447834418119'
+      state: partially_registered
+      profile:
+        gender: male
+        dob: 27-05-2024
+        city: dolor
+        state: placeat
+        address: perferendis
+        country: aperiam
+        postcode: est
+        nationality: magni
+        occupation: aut
+        passport_number: aliquam
+        ethnicity: mixed_or_multiple_ethnic_groups
+      weekly_physical_activity: '1 - 2 days'
+      slogan: placeat
+      club: rem
+      emergency_contact_name: 'John Doe'
+      emergency_contact_phone: '07851081623'
+      tshirt_size: xl
+      user: maiores
+      eec: laboriosam
+      payment_status: unpaid
+      waive: completely
+      waiver: charity
+      fee_type: local
+      preferred_heat_time: iure
+      raced_before: true
+      speak_with_coach: true
+      hear_from_partner_charity: false
+      reason_for_participating: aut
+      estimated_finish_time: accusamus
+      added_via: partner_events
+      event_page: totam
+      enable_family_registration: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vg1Z6ha4Eaedkfc8v63bD5P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/participants/{participant}/transfer'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Transfer a participant'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: quia
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: quia
+      participant_ref: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The event event category ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+      custom_transfer_fee:
+        name: custom_transfer_fee
+        description: 'The custom transfer fee.'
+        required: true
+        example: '5'
+        type: numeric
+        custom: []
+      cancel_difference:
+        name: cancel_difference
+        description: 'Whether or not to cancel the difference.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      eec: 975df0ab-6954-4636-8792-fd242aeb7ee9
+      custom_transfer_fee: '5'
+      cancel_difference: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aDP65ek143aVZ6dfhgc8vEb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/participants/{participant}/verify-transfer'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Check if the participant can be transferred to another event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: sit
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: sit
+      participant_ref: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The event event category ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+      custom_transfer_fee:
+        name: custom_transfer_fee
+        description: 'The custom transfer fee.'
+        required: true
+        example: '5'
+        type: numeric
+        custom: []
+      cancel_difference:
+        name: cancel_difference
+        description: 'Whether or not to cancel the difference.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      eec: 975df0ab-6954-4636-8792-fd242aeb7ee9
+      custom_transfer_fee: '5'
+      cancel_difference: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e5D3Pb64V8cadfgEvahZk61'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/participants/delete
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many participants (Soft delete)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - nobis
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - nobis
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PZ65aakfv86DhVd43cbE1ge'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/participants/restore
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore one or many participants'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - molestias
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - molestias
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a31E8gedahP45fvDZ6bk6Vc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/participants/delete/force
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Delete one or many participants (Permanently)
+        Only the administrator can delete an participant permanently.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - nulla
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - nulla
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Pd1gDh4Vce8fEva6b36Za5k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/participants/{participant}/family-registration/new'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a family member'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: quo
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: quo
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g3DE1a4fdkhb6VZ5Pv6ac8e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/participants/{participant}/family-registration/new'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store the family member'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: accusamus
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: accusamus
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      participant_id:
+        name: participant_id
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      event_custom_field_id:
+        name: event_custom_field_id
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        custom: []
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: Marc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: 'Roby AM'
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: true
+        example: male
+        type: string
+        custom: []
+    cleanBodyParameters:
+      participant_id: 1
+      event_custom_field_id: 11
+      first_name: Marc
+      last_name: 'Roby AM'
+      gender: male
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8aZPg5vc6V1Eb6k3deD4ahf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/participants/{participant}/family-registration/{familyRegistrationId}/edit'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a family member'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: aliquid
+        type: string
+        custom: []
+      familyRegistrationId:
+        name: familyRegistrationId
+        description: 'The id of the family registration.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: aliquid
+      familyRegistrationId: 1
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fbcPaaeEDdVvkhg1634568Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/participants/{participant}/family-registration/{familyRegistrationId}/update'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the family member'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: sit
+        type: string
+        custom: []
+      familyRegistrationId:
+        name: familyRegistrationId
+        description: 'The id of the family registration.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: sit
+      familyRegistrationId: 1
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      participant_id:
+        name: participant_id
+        description: ''
+        required: true
+        example: 20
+        type: integer
+        custom: []
+      event_custom_field_id:
+        name: event_custom_field_id
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        custom: []
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: Marc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: 'Roby AM'
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: true
+        example: male
+        type: string
+        custom: []
+    cleanBodyParameters:
+      participant_id: 20
+      event_custom_field_id: 14
+      first_name: Marc
+      last_name: 'Roby AM'
+      gender: male
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c6g3va6dEeVkD81a5PZbf4h'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/participants/{participant}/family-registration/{familyRegistrationId}/delete'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a family member'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: sed
+        type: string
+        custom: []
+      familyRegistrationId:
+        name: familyRegistrationId
+        description: 'The id of the family registration.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: sed
+      familyRegistrationId: 1
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a36ZvP6a1V45dfcDeEb8gkh'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/participants/export
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export participants'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by state. Must be one of paid, complete, notified, incomplete, clearance.'
+        required: false
+        example: complete
+        type: string
+        custom: []
+      event:
+        name: event
+        description: 'Filter by event slug.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'Filter by charity slug.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      via:
+        name: via
+        description: 'Filter by added via. Must be one of partner_events, book_events, registration_page, external_enquiry_offer, team_invitation, website.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Filter by gender. Must be one of male, female.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Filter by tshirt_size. Must be one of xxxs, xxs, xs, sm, m, l, xl, xxl, xxxl.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'first_name:desc,last_name:asc,full_name:desc'
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying year filter for when user was created.'
+        required: false
+        example: '2023'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying a period to filter users creation date by.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      state: live
+      status: complete
+      deleted: with
+      order_by: 'first_name:desc,last_name:asc,full_name:desc'
+      year: '2023'
+      period: 24h
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: qui
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>complete</code>, <code>notified</code>, <code>clearance</code>, <code>incomplete</code>, or <code>transferred</code>.'
+        required: false
+        example: complete
+        type: string
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: archived
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: false
+        example: male
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Must be one of <code>xxxs</code>, <code>xxs</code>, <code>xs</code>, <code>sm</code>, <code>m</code>, <code>l</code>, <code>xl</code>, <code>xxl</code>, or <code>xxxl</code>.'
+        required: false
+        example: xxxl
+        type: string
+        custom: []
+      event:
+        name: event
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'The ref of the charity. Must be one of .'
+        required: false
+        example: null
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 2
+        type: number
+        custom: []
+      via:
+        name: via
+        description: 'Must be one of <code>partner_events</code>, <code>book_events</code>, <code>registration_page</code>, <code>external_enquiry_offer</code>, <code>team_invitation</code>, <code>website</code>, or <code>transfer</code>.'
+        required: false
+        example: registration_page
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Must be one of <code>unpaid</code>, <code>paid</code>, <code>waived</code>, <code>refunded</code>, or <code>transferred</code>.'
+        required: false
+        example: unpaid
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Must be one of <code>completely</code> or <code>partially</code>.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Must be one of <code>charity</code>, <code>corporate</code>, or <code>partner</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Must be one of <code>1h</code>, <code>6h</code>, <code>12h</code>, <code>24h</code>, <code>7d</code>, <code>30d</code>, <code>90d</code>, <code>180d</code>, <code>1y</code>, or <code>All</code>.'
+        required: false
+        example: 180d
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - eveniet
+        type: 'string[]'
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 15
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 60
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: qui
+      status: complete
+      state: archived
+      gender: male
+      tshirt_size: xxxl
+      year: '2024'
+      month: 2
+      via: registration_page
+      payment_status: unpaid
+      waive: completely
+      waiver: charity
+      period: 180d
+      deleted: with
+      order_by:
+        - eveniet
+      page: 15
+      per_page: 60
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6VbPeZ15Eaf4kchvad8D3g6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/participants/notify
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Notify a participant(s)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - qui
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - qui
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 36D4g8PeEkb15dvfha6ZcaV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/participants/{participant}/place/offer'
+    metadata:
+      groupName: Participants
+      groupDescription: 'Manages participants on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Offer the event place to the participant.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: 'The participant.'
+        required: true
+        example: quod
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: quod
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The ref of the event event category. Must be one of gasghvjhavasvgjhvghvggjyyhvx, fgdhdfgdfhghfafwrrgrete345yh, fhggjkalsugfujhvajvjhvaabjkvw.'
+        required: true
+        example: fgdhdfgdfhghfafwrrgrete345yh
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'The ref of the charity. Must be one of .'
+        required: false
+        example: null
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Must be one of <code>unpaid</code>, <code>paid</code>, <code>waived</code>, <code>refunded</code>, or <code>transferred</code>.'
+        required: true
+        example: unpaid
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Must be one of <code>completely</code> or <code>partially</code>.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Must be one of <code>charity</code>, <code>corporate</code>, or <code>partner</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+      fee_type:
+        name: fee_type
+        description: 'Must be one of <code>local</code> or <code>international</code>.'
+        required: false
+        example: local
+        type: string
+        custom: []
+    cleanBodyParameters:
+      eec: fgdhdfgdfhghfafwrrgrete345yh
+      payment_status: unpaid
+      waive: completely
+      waiver: charity
+      fee_type: local
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ak8VZEhedP356f46ba1gcDv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/participants/stats/summary
+    metadata:
+      groupName: Participants
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Participant Stats'
+      description: 'Get Participant Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Specifying method of filtering query by status.'
+        required: false
+        example: inventore
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: false
+        example: invoices
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      status: inventore
+      type: invoices
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P3Ze4dcVb51aEgak6Dh6vf8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/participants/stats/chart
+    metadata:
+      groupName: Participants
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Participant Chart data'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: true
+        example: invoices
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Specifying method of filtering query by status.'
+        required: false
+        example: et
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      type: invoices
+      year: '2022'
+      status: et
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer d84VEbaahe5P6gcvZD36kf1'
+    controller: null
+    method: null
+    route: null
+    custom: []

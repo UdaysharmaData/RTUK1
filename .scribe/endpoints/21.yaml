@@ -1,0 +1,200 @@
+name: Permission
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/permissions
+    metadata:
+      groupName: Permission
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Permissions'
+      description: 'List system permissions.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 31adfD6EVc5h4eabgk86vPZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/permissions/store
+    metadata:
+      groupName: Permission
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'New permission'
+      description: 'Add a new permission to the system.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bkgfvEP6eV8ah4c3ad61Z5D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/portal/permissions/{permission_ref}/update'
+    metadata:
+      groupName: Permission
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Permission'
+      description: 'Update an existing permission.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      permission_ref:
+        name: permission_ref
+        description: ''
+        required: true
+        example: 97741344-4d25-4d07-a367-ce344cf38410
+        type: string
+        custom: []
+      user:
+        name: user
+        description: "Specifies permission's ref attribute."
+        required: true
+        example: 975dcf12-eda2-4437-8c96-6df4e790d074
+        type: string
+        custom: []
+    cleanUrlParameters:
+      permission_ref: 97741344-4d25-4d07-a367-ce344cf38410
+      user: 975dcf12-eda2-4437-8c96-6df4e790d074
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: "Permission's name."
+        required: true
+        example: suspend-users
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Provides optional description.'
+        required: false
+        example: 'User with this permission can suspend other users'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: suspend-users
+      description: 'User with this permission can suspend other users'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6cZd1PegaDvhEaVf3856k4b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/permissions/{permission_ref}/delete'
+    metadata:
+      groupName: Permission
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Permission'
+      description: 'Delete an existing permission.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      permission_ref:
+        name: permission_ref
+        description: ''
+        required: true
+        example: 97741344-4d25-4d07-a367-ce344cf38410
+        type: string
+        custom: []
+      user:
+        name: user
+        description: "Specifies permission's ref attribute."
+        required: true
+        example: 975dcf12-eda2-4437-8c96-6df4e790d074
+        type: string
+        custom: []
+    cleanUrlParameters:
+      permission_ref: 97741344-4d25-4d07-a367-ce344cf38410
+      user: 975dcf12-eda2-4437-8c96-6df4e790d074
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer af4gbe3Zh6P65VDkc1vd8Ea'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,948 @@
+name: Partners
+description: 'Manages partners on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partners/all
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated partners for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      with:
+        name: with
+        description: 'Get partners with channels. Must be one of channels.'
+        required: false
+        example: channels
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      with: channels
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      with:
+        name: with
+        description: 'Must be one of <code>channels</code>.'
+        required: false
+        example: quasi
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 73
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 6
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: ut
+      with: quasi
+      page: 73
+      per_page: 6
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5EZPbaVa8g6Dh4d36ecf1vk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partners
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of partners'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,code:asc,expiry:desc,created_at:desc'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters:
+      page: 1
+      order_by: 'name:desc,code:asc,expiry:desc,created_at:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: fugit
+        type: string
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 40
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 42
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - dolores
+        type: 'string[]'
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: fugit
+      page: 40
+      per_page: 42
+      order_by:
+        - dolores
+      deleted: with
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cVgfv8ed45PEb61DZakh3a6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partners/create
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a partner'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zec56ka86bgPha1v4EfDd3V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/partners/create
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a partner'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the partner (required). This field is required when <code>site</code> is present.'
+        required: false
+        example: 'Lets Do This'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'The refs of the site. Must be one of tyf768t0p7wy879oywi, t89093ytohevkuvdgvui, hsid0du23-e3hidqwidvu.'
+        required: true
+        example: tyf768t0p7wy879oywi
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The partner description.'
+        required: false
+        example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        type: string
+        custom: []
+      website:
+        name: website
+        description: 'The website.'
+        required: false
+        example: 'https://spartanrace.uk/en'
+        type: string
+        custom: []
+      code:
+        name: code
+        description: 'The partner code.'
+        required: false
+        example: LDT
+        type: string
+        custom: []
+      socials:
+        name: socials
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - follow
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      'socials[].platform':
+        name: 'socials[].platform'
+        description: 'Must be one of <code>google</code>, <code>facebook</code>, <code>twitter</code>, <code>instagram</code>, <code>tiktok</code>, <code>linkedin</code>, <code>youtube</code>, <code>vimeo</code>, or <code>github</code>.'
+        required: false
+        example: twitter
+        type: string
+        custom: []
+      'socials[].url':
+        name: 'socials[].url'
+        description: ''
+        required: false
+        example: 'https://twitter.com/bathhalf'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Lets Do This'
+      site: tyf768t0p7wy879oywi
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      website: 'https://spartanrace.uk/en'
+      code: LDT
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - follow
+        canonical_url: 'https://example.com'
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V5E6D1vcea63akfh8Zg4bdP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/partners/{ref}/details'
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get a partner's details."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        custom: []
+      partner_ref:
+        name: partner_ref
+        description: 'The ref of the partner.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: voluptatem
+      partner_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P68ve1a5ZE6hgkbV4dcf3Da'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/partners/{ref}/edit'
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a partner'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: itaque
+        type: string
+        custom: []
+      partner_ref:
+        name: partner_ref
+        description: 'The ref of the partner.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: itaque
+      partner_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZkd8Dc4b51EPfgh366Vaev'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partners/export
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export partners'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,code:asc,expiry:desc,created_at:desc'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters:
+      page: 1
+      order_by: 'name:desc,code:asc,expiry:desc,created_at:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 21
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 89
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - ratione
+        type: 'string[]'
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: ut
+      page: 21
+      per_page: 89
+      order_by:
+        - ratione
+      deleted: with
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ad6a3D8vbkEehf61P4Zcg5V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/partners/{partner_ref}/update'
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a partner'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      partner_ref:
+        name: partner_ref
+        description: 'The ref of the partner.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      partner_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the partner (required). This field is required when <code>site</code> is present.'
+        required: false
+        example: 'Lets Do This'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'The refs of the site. Must be one of tyf768t0p7wy879oywi, t89093ytohevkuvdgvui, hsid0du23-e3hidqwidvu. This field is required when <code>name</code> is present.'
+        required: false
+        example: t89093ytohevkuvdgvui
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The partner description.'
+        required: false
+        example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        type: string
+        custom: []
+      website:
+        name: website
+        description: 'The website.'
+        required: false
+        example: 'https://spartanrace.uk/en'
+        type: string
+        custom: []
+      code:
+        name: code
+        description: 'The partner code.'
+        required: false
+        example: LDT
+        type: string
+        custom: []
+      socials:
+        name: socials
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - follow
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      'socials[].platform':
+        name: 'socials[].platform'
+        description: 'Must be one of <code>google</code>, <code>facebook</code>, <code>twitter</code>, <code>instagram</code>, <code>tiktok</code>, <code>linkedin</code>, <code>youtube</code>, <code>vimeo</code>, or <code>github</code>.'
+        required: false
+        example: twitter
+        type: string
+        custom: []
+      'socials[].url':
+        name: 'socials[].url'
+        description: ''
+        required: false
+        example: 'https://twitter.com/bathhalf'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Lets Do This'
+      site: t89093ytohevkuvdgvui
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      website: 'https://spartanrace.uk/en'
+      code: LDT
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - follow
+        canonical_url: 'https://example.com'
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Eda4VvZfaP686eDk5g3cb1h'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/partners/{partner_ref}/image/{upload_ref}/delete'
+    metadata:
+      groupName: Partners
+      groupDescription: 'Manages partners on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Remove the partner's image"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      partner_ref:
+        name: partner_ref
+        description: 'The ref of the partner.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      upload_ref:
+        name: upload_ref
+        description: 'The ref of the upload.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      partner_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      upload_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gfbVavZekdEDhc31P86a456'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partners/stats/summary
+    metadata:
+      groupName: Partners
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Partner Stats'
+      description: 'Get Partner Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k4cdaD8g63Ea6hvZbf5V1eP'
+    controller: null
+    method: null
+    route: null
+    custom: []

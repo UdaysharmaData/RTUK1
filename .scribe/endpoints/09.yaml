@@ -1,0 +1,122 @@
+name: File
+description: 'Manages files download on the application'
+endpoints:
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/uploads/{upload_ref}/update'
+    metadata:
+      groupName: File
+      groupDescription: 'Manages files download on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Update a file's details"
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      upload_ref:
+        name: upload_ref
+        description: ''
+        required: true
+        example: 97620161-69c6-4b12-b219-d99e428fbdb2
+        type: string
+        custom: []
+      upload:
+        name: upload
+        description: 'The ref of the upload.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      upload_ref: 97620161-69c6-4b12-b219-d99e428fbdb2
+      upload: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      alt:
+        name: alt
+        description: ''
+        required: false
+        example: dolore
+        type: string
+        custom: []
+      caption:
+        name: caption
+        description: ''
+        required: false
+        example: sit
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: et
+      alt: dolore
+      caption: sit
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/download/{path}'
+    metadata:
+      groupName: File
+      groupDescription: 'Manages files download on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Download file from public/private directory'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      path:
+        name: path
+        description: 'The path to the resource.'
+        required: true
+        example: 'https://test.sportforcharity.com/storage/uploads/media/images/kvWpjp9km1JECSAD.png'
+        type: string
+        custom: []
+    cleanUrlParameters:
+      path: 'https://test.sportforcharity.com/storage/uploads/media/images/kvWpjp9km1JECSAD.png'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"status":false,"message":"The resource was not found!"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,3444 @@
+name: Events
+description: 'Manages events on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/all
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated events for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      with:
+        name: with
+        description: 'Fields to filter by.'
+        required: false
+        example: []
+        type: object
+        custom: []
+      with.value:
+        name: with.value
+        description: 'Get events with categories or with third parties. Must be one of categories, third_parties.'
+        required: false
+        example: categories
+        type: string
+        custom: []
+      with.visibility:
+        name: with.visibility
+        description: 'Filter the event categories of the events returned above. Must be one of public, private.'
+        required: false
+        example: public
+        type: string
+        custom: []
+      active:
+        name: active
+        description: 'Filter by active events.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      extra_attributes:
+        name: extra_attributes
+        description: 'Filter by extra properties.'
+        required: false
+        example: "'country,estimated,partner_event'"
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page ,'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      with:
+        value: categories
+        visibility: public
+      active: true
+      state: live
+      extra_attributes: "'country,estimated,partner_event'"
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: quibusdam
+        type: string
+        custom: []
+      with:
+        name: with
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      with.value:
+        name: with.value
+        description: 'Must be one of <code>categories</code> or <code>third_parties</code>.'
+        required: false
+        example: minima
+        type: string
+        custom: []
+      with.visibility:
+        name: with.visibility
+        description: 'Must be one of <code>public</code> or <code>private</code>.'
+        required: true
+        example: public
+        type: string
+        custom: []
+      active:
+        name: active
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      extra_attributes:
+        name: extra_attributes
+        description: ''
+        required: false
+        example:
+          - enim
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: quibusdam
+      with:
+        value: minima
+        visibility: public
+      active: false
+      state: live
+      extra_attributes:
+        - enim
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer h63PvDeZb4c5aagkEf8V1d6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Filter by city ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: 'Filter by venue ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      event_experience:
+        name: event_experience
+        description: 'Filter by event_experience ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying year filter for when user was created.'
+        required: false
+        example: '2023'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Filter by month.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      status:
+        name: status
+        description: 'Filter by status.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      type:
+        name: type
+        description: 'Filter by type. Should be one of rolling, standalone.'
+        required: false
+        example: standalone
+        type: string
+        custom: []
+      partner_event:
+        name: partner_event
+        description: 'Filter by partner_event.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      country:
+        name: country
+        description: 'Filter by country.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Specifying the inclusion of ONLY pages with associated FAQs. Should be one of with, without.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      medals:
+        name: medals
+        description: 'Specifying the inclusion of ONLY pages with associated medals. Should be one of with, without.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      ids:
+        name: ids
+        description: 'Filter by ids. Must be an array of ids.'
+        required: false
+        example:
+          - 148
+          - 153
+        type: 'integer[]'
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Specifying how to interact with drafted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:asc,start_date:asc,end_date:desc'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+      has_third_party_set_up:
+        name: has_third_party_set_up
+        description: 'Filter by events having third party setup or not.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      state: live
+      year: '2023'
+      status: true
+      type: standalone
+      partner_event: true
+      country: true
+      faqs: with
+      medals: with
+      ids:
+        - 148
+        - 153
+      deleted: with
+      drafted: with
+      order_by: 'name:asc,start_date:asc,end_date:desc'
+      has_third_party_set_up: true
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      partner_event:
+        name: partner_event
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 4
+        type: number
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: expired
+        type: string
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: sit
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: amet
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: aut
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: debitis
+        type: string
+        custom: []
+      experience:
+        name: experience
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>standalone</code> or <code>rolling</code>.'
+        required: false
+        example: standalone
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      medals:
+        name: medals
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      ids:
+        name: ids
+        description: ''
+        required: false
+        example: null
+        type: object
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - aut
+        type: 'string[]'
+        custom: []
+      has_third_party_set_up:
+        name: has_third_party_set_up
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 65
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 80
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: et
+      status: true
+      partner_event: true
+      year: '2024'
+      month: 4
+      state: expired
+      country: sit
+      region: amet
+      city: aut
+      venue: debitis
+      type: standalone
+      faqs: with
+      medals: without
+      deleted: without
+      drafted: without
+      order_by:
+        - aut
+      has_third_party_set_up: false
+      page: 65
+      per_page: 80
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ePVag5kc6ZdfavE1D6384hb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/upcoming
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The upcoming events.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters:
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 43
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 9
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 43
+      per_page: 9
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 668PgV4vf1aEh3kacd5bZDe'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/create
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 86ab6EdDZ4cVe1k5g3hPfav'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/edit'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: ut
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: ut
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vkh5gVbPe18a6Zfa3cD4E6d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/events/{event}/reg-fields/update'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the registration fields (mandatory & optional) of an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: qui
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: qui
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      reg_first_name:
+        name: reg_first_name
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_last_name:
+        name: reg_last_name
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_email:
+        name: reg_email
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_gender:
+        name: reg_gender
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_dob:
+        name: reg_dob
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_phone:
+        name: reg_phone
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_preferred_heat_time:
+        name: reg_preferred_heat_time
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      custom_preferred_heat_time:
+        name: custom_preferred_heat_time
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      custom_preferred_heat_time.custom_preferred_heat_time_start:
+        name: custom_preferred_heat_time.custom_preferred_heat_time_start
+        description: ''
+        required: false
+        example: '08:30 - 09:00'
+        type: string
+        custom: []
+      custom_preferred_heat_time.custom_preferred_heat_time_end:
+        name: custom_preferred_heat_time.custom_preferred_heat_time_end
+        description: ''
+        required: false
+        example: '09:30 - 10:00'
+        type: string
+        custom: []
+      reg_raced_before:
+        name: reg_raced_before
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_estimated_finish_time:
+        name: reg_estimated_finish_time
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_tshirt_size:
+        name: reg_tshirt_size
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_age_on_race_day:
+        name: reg_age_on_race_day
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_month_born_in:
+        name: reg_month_born_in
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_nationality:
+        name: reg_nationality
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_occupation:
+        name: reg_occupation
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_address:
+        name: reg_address
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_city:
+        name: reg_city
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_state:
+        name: reg_state
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_postcode:
+        name: reg_postcode
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_country:
+        name: reg_country
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_emergency_contact_name:
+        name: reg_emergency_contact_name
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_emergency_contact_phone:
+        name: reg_emergency_contact_phone
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_passport_number:
+        name: reg_passport_number
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_family_registrations:
+        name: reg_family_registrations
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_minimum_age:
+        name: reg_minimum_age
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        custom: []
+      born_before:
+        name: born_before
+        description: 'The participant must be born before this year to be able to register. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2013-05-27'
+        type: string
+        custom: []
+      reg_ethnicity:
+        name: reg_ethnicity
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_weekly_physical_activity:
+        name: reg_weekly_physical_activity
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_speak_with_coach:
+        name: reg_speak_with_coach
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      reg_hear_from_partner_charity:
+        name: reg_hear_from_partner_charity
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reg_reason_for_participating:
+        name: reg_reason_for_participating
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      reg_first_name: false
+      reg_last_name: false
+      reg_email: true
+      reg_gender: false
+      reg_dob: false
+      reg_phone: false
+      reg_preferred_heat_time: false
+      reg_raced_before: true
+      reg_estimated_finish_time: true
+      reg_tshirt_size: true
+      reg_age_on_race_day: true
+      reg_month_born_in: false
+      reg_nationality: true
+      reg_occupation: true
+      reg_address: true
+      reg_city: true
+      reg_state: false
+      reg_postcode: true
+      reg_country: true
+      reg_emergency_contact_name: false
+      reg_emergency_contact_phone: true
+      reg_passport_number: true
+      reg_family_registrations: false
+      reg_minimum_age: 11
+      born_before: '2013-05-27'
+      reg_ethnicity: false
+      reg_weekly_physical_activity: false
+      reg_speak_with_coach: false
+      reg_hear_from_partner_charity: true
+      reg_reason_for_participating: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EahPdgcZ8aVk361f6D5veb4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/events/publish
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark an event as published'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'The ids of the events to be marked as published.'
+        required: true
+        example:
+          - 1
+          - 2
+          - 3
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+        - 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g8bD54dk16Zve6acEf3PhaV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/events/draft
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark an event as draft'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'The ids of the events to be marked as draft.'
+        required: true
+        example:
+          - 1
+          - 2
+          - 3
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+        - 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k4PD6va1ZEfc6hgd8V3eb5a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/events/delete
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many events (Soft delete)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - quia
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - quia
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k41eg5fE3vh86ZaPaVb6cdD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/events/restore
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore one or many events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - iusto
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - iusto
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gV6aehaEZc8d1P3b5Dv46fk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/events/delete/force
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Delete one or many events (Permanently)
+        Only the administrator can delete an event permanently.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - similique
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - similique
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k5v8PZDh3E1a4gebVacf66d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/events/{event}/images/{upload_ref}/delete'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Remove the event image or an image from the event's gallery."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: ut
+        type: string
+        custom: []
+      upload_ref:
+        name: upload_ref
+        description: 'The ref of the upload.'
+        required: true
+        example: 97ad9df6-d927-4a44-8fec-3daacee89678
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: ut
+      upload_ref: 97ad9df6-d927-4a44-8fec-3daacee89678
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E86fP5cZd64DVhgbvak31ea'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/{event}/duplicate'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Duplicate an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: cupiditate
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: cupiditate
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DPv8e6Z1aa43cg5bdhfEkV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/{event}/archive'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Archive an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: voluptatem
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: voluptatem
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer h8Vd6kE36vaeg5a1Pf4ZcbD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/events/archive
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Archive multiple events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      event_refs:
+        name: event_refs
+        description: ''
+        required: false
+        example:
+          - dolorem
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      event_refs:
+        - dolorem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E56a3D8bP1Vvef6d4kcghZa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/export
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Filter by city ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: 'Filter by venue ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      event_experience:
+        name: event_experience
+        description: 'Filter by event_experience ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying year filter for when user was created.'
+        required: false
+        example: '2023'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Filter by month.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      status:
+        name: status
+        description: 'Filter by status.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      type:
+        name: type
+        description: 'Filter by type.'
+        required: false
+        example: 'rolling, standalone'
+        type: string
+        custom: []
+      partner_event:
+        name: partner_event
+        description: 'Filter by partner_event.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      ids:
+        name: ids
+        description: 'Filter by ids. Must be an array of ids.'
+        required: false
+        example:
+          - 148
+          - 153
+        type: 'integer[]'
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:asc,start_date:asc,end_date:desc'
+        type: string
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      state: live
+      year: '2023'
+      status: true
+      type: 'rolling, standalone'
+      partner_event: true
+      ids:
+        - 148
+        - 153
+      deleted: with
+      order_by: 'name:asc,start_date:asc,end_date:desc'
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: qui
+        type: string
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      partner_event:
+        name: partner_event
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 7
+        type: number
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: quia
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: sint
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: autem
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: omnis
+        type: string
+        custom: []
+      experience:
+        name: experience
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>standalone</code> or <code>rolling</code>.'
+        required: false
+        example: rolling
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      medals:
+        name: medals
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      ids:
+        name: ids
+        description: ''
+        required: false
+        example: null
+        type: object
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - doloremque
+        type: 'string[]'
+        custom: []
+      has_third_party_set_up:
+        name: has_third_party_set_up
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 84
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 86
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: qui
+      status: false
+      partner_event: true
+      year: '2024'
+      month: 7
+      state: live
+      country: quia
+      region: sint
+      city: autem
+      venue: omnis
+      type: rolling
+      faqs: without
+      medals: with
+      deleted: only
+      drafted: with
+      order_by:
+        - doloremque
+      has_third_party_set_up: true
+      page: 84
+      per_page: 86
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6d38vEDk146fbPVaeghZac5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/charity/summary'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "The charities summary for an event (grouped by it's event categories)"
+      description: 'TODO: @tsaffi - Revise this logic based on the similar revision made on SFC'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: asperiores
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: asperiores
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hak63a1Z6vc5gDf8VPb4deE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/events/{event}/charity/{charity_ref}/totalPlacesNotifications/toggle'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Toggle charity total places notifications
+        Whether or not to notify a charity when it's availble places reduces to certain threshold values.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: qui
+        type: string
+        custom: []
+      charity_ref:
+        name: charity_ref
+        description: 'The ref of the charity.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: qui
+      charity_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      notify:
+        name: notify
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      notify: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aPk56cEDdvg1aVf6ehZ3b84'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/promotionalPages/add'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Add an event to promotional pages'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: vel
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: vel
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vk6ZP4DfaehEV35bd8ag1c6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/custom-fields'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get the event's custom fields."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: earum
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: earum
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fh4ab6g6e1ZkdDVv5PaE3c8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/custom-field/create'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create an event custom field for registration'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: cum
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: cum
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vDhE43kde61gV5cZaf6Pab8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/{event}/custom-field/store'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store an event custom field for registration'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: quaerat
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: quaerat
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The custom field name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Marital Status'
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>text</code>, <code>textarea</code>, <code>select</code>, <code>radio</code>, or <code>checkbox</code>.'
+        required: true
+        example: select
+        type: string
+        custom: []
+      caption:
+        name: caption
+        description: 'The custom field caption.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      possibilities:
+        name: possibilities
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      possibilities.options:
+        name: possibilities.options
+        description: ''
+        required: false
+        example:
+          - beatae
+        type: 'string[]'
+        custom: []
+      possibilities.values:
+        name: possibilities.values
+        description: ''
+        required: false
+        example:
+          - ipsam
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      rule:
+        name: rule
+        description: 'Must be one of <code>required</code> or <code>optional</code>.'
+        required: true
+        example: required
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Marital Status'
+      type: select
+      status: false
+      rule: required
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z6vD3EdbPac16Ve4h8akfg5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/custom-field/{event_custom_field}/edit'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit an event custom field for registration'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: odit
+        type: string
+        custom: []
+      event_custom_field:
+        name: event_custom_field
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      event_custom_field_ref:
+        name: event_custom_field_ref
+        description: 'The ref of the event custom field.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: odit
+      event_custom_field: voluptas
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      event_custom_field_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer efv8VZ16kgEcdh456PaaDb3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/events/{event}/custom-field/{event_custom_field}/update'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an event custom field for registration'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: nulla
+        type: string
+        custom: []
+      event_custom_field:
+        name: event_custom_field
+        description: ''
+        required: true
+        example: sit
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      event_custom_field_ref:
+        name: event_custom_field_ref
+        description: 'The ref of the event custom field.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: nulla
+      event_custom_field: sit
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      event_custom_field_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The custom field name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Marital Status'
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Must be one of <code>text</code>, <code>textarea</code>, <code>select</code>, <code>radio</code>, or <code>checkbox</code>.'
+        required: true
+        example: select
+        type: string
+        custom: []
+      caption:
+        name: caption
+        description: 'The custom field caption.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      possibilities:
+        name: possibilities
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      possibilities.options:
+        name: possibilities.options
+        description: ''
+        required: false
+        example:
+          - molestiae
+        type: 'string[]'
+        custom: []
+      possibilities.values:
+        name: possibilities.values
+        description: ''
+        required: false
+        example:
+          - earum
+        type: 'string[]'
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      name: 'Marital Status'
+      type: select
+      status: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer efkgD43a65EdaV8vhPbZ6c1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/events/{event}/custom-field/{event_custom_field}/status/toggle'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Toggle the status of a custom field for registration'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: ea
+        type: string
+        custom: []
+      event_custom_field:
+        name: event_custom_field
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      event_custom_field_ref:
+        name: event_custom_field_ref
+        description: 'The ref of the event custom field.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: ea
+      event_custom_field: est
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      event_custom_field_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      status: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k3ehadvP5gE1D46Zbf8ca6V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/partners'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get the event's partners (third party integration)."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: laborum
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: laborum
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: nesciunt
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: nesciunt
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D3c6ve5bV4d1ZfaPgEh6ka8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/partners/create'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Create an event's partner (third party integration)"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: enim
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: enim
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer efa4Da8g65kv6E1dV3hZcbP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/partners/{event_third_party_ref}/edit'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Edit an event's partner (third party integration)"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: a
+        type: string
+        custom: []
+      event_third_party_ref:
+        name: event_third_party_ref
+        description: 'The ref of the event third party.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: a
+      event_third_party_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P14e83ZEbfdhDvga6c5Va6k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/events/{event}/partners/delete'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many event partners (third party integration)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: illum
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: illum
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - vero
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - vero
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zc4eD56v18gafPa6EkbVhd3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/medals'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get the event's medals."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: numquam
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: numquam
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: aut
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: aut
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vd8vfkPbZahEe465gcDa631'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/events/{event_ref}/delete-faqs'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQs'
+      description: 'Delete multiple FAQs from an event.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faqs_ids:
+        name: faqs_ids
+        description: 'The ids of the FAQs to be deleted.'
+        required: true
+        example:
+          - 1
+          - 2
+          - 3
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faqs_ids:
+        - 1
+        - 2
+        - 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5avhea4PE1d6Vcb8Zk6g3fD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/events/{event_ref}/{faq_ref}/delete-faq-details'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQ Details'
+      description: 'Delete multiple Event FAQ details by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      faq_ref:
+        name: faq_ref
+        description: 'The ref of the faq.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      faq_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faq_details_ids:
+        name: faq_details_ids
+        description: 'The list of ids associated with specific event faq_details ids.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faq_details_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hZbvf61V853da46DkegcPaE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/events/{event_ref}/{faq_ref}/{faq_details_ref}/faq-details-image/{upload_ref}/delete'
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove faq details image'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: ''
+        required: true
+        example: qwertyuiopfdssdfghj
+        type: string
+        custom: []
+      faq_ref:
+        name: faq_ref
+        description: ''
+        required: true
+        example: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+        type: string
+        custom: []
+      faq_details_ref:
+        name: faq_details_ref
+        description: ''
+        required: true
+        example: aliquid
+        type: string
+        custom: []
+      upload_ref:
+        name: upload_ref
+        description: ''
+        required: true
+        example: ea
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: qwertyuiopfdssdfghj
+      faq_ref: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+      faq_details_ref: aliquid
+      upload_ref: ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 458a366fhDveZkb1EcaVdgP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/stats/summary
+    metadata:
+      groupName: Events
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Event Stats'
+      description: 'Get Event Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Specifying method of filtering query by status.'
+        required: false
+        example: a
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Specifying method of filtering query by category (ref for event categories).'
+        required: false
+        example: 98677146-d86a-4b10-a694-d79eb66e8220
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: false
+        example: invoices
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      status: a
+      category: 98677146-d86a-4b10-a694-d79eb66e8220
+      type: invoices
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dPZ3Vcva566bhe184EgkfDa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/events/stats/chart
+    metadata:
+      groupName: Events
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Event Chart data'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: true
+        example: invoices
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Specifying method of filtering query by status.'
+        required: false
+        example: eius
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Specifying method of filtering query by category (ref for event categories).'
+        required: false
+        example: 98677146-d86a-4b10-a694-d79eb66e8220
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      type: invoices
+      year: '2022'
+      status: eius
+      category: 98677146-d86a-4b10-a694-d79eb66e8220
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D4vadZa6Pc831e6EhfgV5kb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/events/all
+    metadata:
+      groupName: Events
+      groupDescription: 'Manages events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated events for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      with:
+        name: with
+        description: 'Fields to filter by.'
+        required: false
+        example: []
+        type: object
+        custom: []
+      with.value:
+        name: with.value
+        description: 'Get events with categories or with third parties. Must be one of categories, third_parties.'
+        required: false
+        example: categories
+        type: string
+        custom: []
+      with.visibility:
+        name: with.visibility
+        description: 'Filter the event categories of the events returned above. Must be one of public, private.'
+        required: false
+        example: public
+        type: string
+        custom: []
+      active:
+        name: active
+        description: 'Filter by active events.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      state:
+        name: state
+        description: 'Filter by state. Must be one of live, expired, archived.'
+        required: false
+        example: live
+        type: string
+        custom: []
+      extra_attributes:
+        name: extra_attributes
+        description: 'Filter by extra properties.'
+        required: false
+        example: "'country,estimated,partner_event'"
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page ,'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      with:
+        value: categories
+        visibility: public
+      active: true
+      state: live
+      extra_attributes: "'country,estimated,partner_event'"
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: officia
+        type: string
+        custom: []
+      with:
+        name: with
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      with.value:
+        name: with.value
+        description: 'Must be one of <code>categories</code> or <code>third_parties</code>.'
+        required: false
+        example: porro
+        type: string
+        custom: []
+      with.visibility:
+        name: with.visibility
+        description: 'Must be one of <code>public</code> or <code>private</code>.'
+        required: true
+        example: public
+        type: string
+        custom: []
+      active:
+        name: active
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      state:
+        name: state
+        description: 'Must be one of <code>live</code>, <code>expired</code>, or <code>archived</code>.'
+        required: false
+        example: expired
+        type: string
+        custom: []
+      extra_attributes:
+        name: extra_attributes
+        description: ''
+        required: false
+        example:
+          - enim
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: officia
+      with:
+        value: porro
+        visibility: public
+      active: true
+      state: expired
+      extra_attributes:
+        - enim
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"status":false,"message":"Unauthorized","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ck5v8aVa6fhD3bZg16Pd4Ee'
+    controller: null
+    method: null
+    route: null
+    custom: []

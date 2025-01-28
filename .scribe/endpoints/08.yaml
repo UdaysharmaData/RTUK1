@@ -1,0 +1,362 @@
+name: Role
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/roles
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Roles' Listing"
+      description: "Get paginated application roles' list."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      keyword:
+        name: keyword
+        description: 'Specifying the search query.'
+        required: false
+        example: admin
+        type: string
+        custom: []
+      role:
+        name: role
+        description: 'Specifying the user role to query by.'
+        required: false
+        example: administrator
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:asc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      deleted: with
+      keyword: admin
+      role: administrator
+      order_by: 'name:desc,created_at:asc'
+    bodyParameters:
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 83
+        type: number
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - est
+        type: 'string[]'
+        custom: []
+      keyword:
+        name: keyword
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: bkkxncztebqdduuvikwpuyt
+        type: string
+        custom: []
+    cleanBodyParameters:
+      per_page: 83
+      deleted: only
+      order_by:
+        - est
+      keyword: bkkxncztebqdduuvikwpuyt
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dfaPbVvacDE836g5614kZeh'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/roles/{ref}/show'
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve Role'
+      description: 'Get specific role by their ref attribute.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: "Specifies role's ref attribute."
+        required: true
+        example: 975dcf12-eda2-4437-8c96-6df4e790d074
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 975dcf12-eda2-4437-8c96-6df4e790d074
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6hae68a4EPf5dkg1vDbVcZ3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/roles/options
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve Role Options'
+      description: 'Fetch available form options'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cg831kef5aEda646bPDZVhv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/roles/store
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Role'
+      description: 'Create a new role.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the role.'
+        required: true
+        example: admin
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The description of the role.'
+        required: false
+        example: 'user with admin privileges'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: admin
+      description: 'user with admin privileges'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer haPcEbD3f8Z146e5kvdaV6g'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/role/delete
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Many Roles'
+      description: "Delete multiple roles' data by specifying their ids."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      force:
+        name: force
+        description: 'Optionally specifying to permanently delete model, instead of the default soft-delete.'
+        required: false
+        example: '1'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      force: '1'
+    bodyParameters:
+      roles_ids:
+        name: roles_ids
+        description: 'The list of ids associated with roles.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      roles_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E3bPZad8D65614afchgekVv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: api/v1/role/restore
+    metadata:
+      groupName: Role
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore Many Roles'
+      description: 'Restore multiple roles data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      roles_ids:
+        name: roles_ids
+        description: 'The list of ids associated with roles.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      roles_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5k8d6Eea16baVghf3vPDc4Z'
+    controller: null
+    method: null
+    route: null
+    custom: []

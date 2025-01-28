@@ -1,0 +1,322 @@
+name: Finance
+description: 'Handles all finance related operations'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/finances/meta
+    metadata:
+      groupName: Finance
+      groupDescription: 'Handles all finance related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the meta data'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/finances/balance
+    metadata:
+      groupName: Finance
+      groupDescription: 'Handles all finance related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get the balance of the user's wallet"
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/finances/balance/infinite
+    metadata:
+      groupName: Finance
+      groupDescription: 'Handles all finance related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the balance of the infinite accounts of the user'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of participant_registration, participant_transfer, market_resale, charity_membership,partner_package_assignment,event_places,corporate_credit.'
+        required: true
+        example: participant_registration
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: participant_registration
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/finances/balance/finite
+    metadata:
+      groupName: Finance
+      groupDescription: 'Handles all finance related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the balance of the finite accounts of the user'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of participant_registration, participant_transfer, market_resale, charity_membership,partner_package_assignment,event_places,corporate_credit.'
+        required: true
+        example: participant_registration
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: participant_registration
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/finances/accounts/{type}/history'
+    metadata:
+      groupName: Finance
+      groupDescription: 'Handles all finance related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the history of the different account types'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of finite, infinte.'
+        required: true
+        example: finite
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: finite
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      account:
+        name: account
+        description: 'Filter by account ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by status. Must be one of active, inactive.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      valid_from:
+        name: valid_from
+        description: 'Filter by valid_from. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2023"'
+        type: string
+        custom: []
+      valid_to:
+        name: valid_to
+        description: 'Filter by valid_to. Must be a valid date in the format d-m-Y.'
+        required: false
+        example: '"22-02-2023"'
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma. These are created_at, valid_from, valid_to.'
+        required: false
+        example: 'created_at:asc,valid_from:asc,valid_to:desc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      valid_from: '"22-02-2023"'
+      valid_to: '"22-02-2023"'
+      deleted: with
+      order_by: 'created_at:asc,valid_from:asc,valid_to:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      account:
+        name: account
+        description: ''
+        required: true
+        example: velit
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>active</code> or <code>inactive</code>.'
+        required: true
+        example: active
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - iure
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: et
+      account: velit
+      status: active
+      deleted: with
+      order_by:
+        - iure
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

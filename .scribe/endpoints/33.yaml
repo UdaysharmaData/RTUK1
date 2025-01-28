@@ -1,0 +1,897 @@
+name: Entries
+description: 'Manages participants entries (registrations) on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/entries
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the events of the user (having the participant role)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category slug.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Filter by participant status.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Filter by year.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      month:
+        name: month
+        description: 'Filter by month.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'charity:desc,event:asc,status:desc,created_at:desc'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying a period to filter users creation date by.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      order_by: 'charity:desc,event:asc,status:desc,created_at:desc'
+      period: 24h
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>complete</code>, <code>notified</code>, <code>clearance</code>, <code>incomplete</code>, or <code>transferred</code>.'
+        required: false
+        example: incomplete
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 3
+        type: number
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 83
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+      period:
+        name: period
+        description: 'Must be one of <code>1h</code>, <code>6h</code>, <code>12h</code>, <code>24h</code>, <code>7d</code>, <code>30d</code>, <code>90d</code>, <code>180d</code>, <code>1y</code>, or <code>All</code>.'
+        required: false
+        example: 180d
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - ab
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: consequatur
+      status: incomplete
+      year: '2024'
+      month: 3
+      page: 83
+      per_page: 19
+      period: 180d
+      order_by:
+        - ab
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6Dea3faPZd51Vg4cbkvh68E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/entries/{participant}/edit'
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit an entry'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d40d8e-9d33-4f80-9f07-78aea6a59039
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: voluptatem
+      participant_ref: 97d40d8e-9d33-4f80-9f07-78aea6a59039
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ed41a58D6khgfV3cZa6EvPb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/entries/{participant_ref}/update'
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an entry'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d40d8e-9d33-4f80-9f07-78aea6a59039
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant_ref: 97d40d8e-9d33-4f80-9f07-78aea6a59039
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: Marc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: 'Roby AM'
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: ''
+        required: false
+        example: '447834418119'
+        type: string
+        custom: []
+      profile:
+        name: profile
+        description: ''
+        required: false
+        example: []
+        type: object
+        custom: []
+      profile.gender:
+        name: profile.gender
+        description: 'Must be one of <code>male</code>, <code>female</code>, or <code>other</code>.'
+        required: false
+        example: male
+        type: string
+        custom: []
+      profile.dob:
+        name: profile.dob
+        description: 'The dob. Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example: 18-02-1980
+        type: string
+        custom: []
+      profile.city:
+        name: profile.city
+        description: ''
+        required: false
+        example: London
+        type: string
+        custom: []
+      profile.state:
+        name: profile.state
+        description: 'The state they reside in.'
+        required: false
+        example: England
+        type: string
+        custom: []
+      profile.address:
+        name: profile.address
+        description: ''
+        required: true
+        example: 'Chelsea Studios 410-412 Fulham Road., London SW6 1EB, UK'
+        type: string
+        custom: []
+      profile.country:
+        name: profile.country
+        description: ''
+        required: false
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      profile.postcode:
+        name: profile.postcode
+        description: ''
+        required: false
+        example: 'SW6 1EB'
+        type: string
+        custom: []
+      profile.nationality:
+        name: profile.nationality
+        description: ''
+        required: false
+        example: British
+        type: string
+        custom: []
+      profile.occupation:
+        name: profile.occupation
+        description: ''
+        required: false
+        example: 'Stock Broker'
+        type: string
+        custom: []
+      profile.passport_number:
+        name: profile.passport_number
+        description: ''
+        required: false
+        example: P5508000A
+        type: string
+        custom: []
+      profile.ethnicity:
+        name: profile.ethnicity
+        description: 'Must be one of <code>white_british</code>, <code>white_other</code>, <code>asian_or_asian_british</code>, <code>prefer_not_to_say</code>, <code>mixed_or_multiple_ethnic_groups</code>, <code>black_or_black_british</code>, or <code>other_ethnic_group</code>.'
+        required: false
+        example: white_british
+        type: string
+        custom: []
+      weekly_physical_activity:
+        name: weekly_physical_activity
+        description: 'Must be one of <code>1 - 2 days</code>, <code>3 - 5 days</code>, or <code>6+ days</code>.'
+        required: false
+        example: '1 - 2 days'
+        type: string
+        custom: []
+      slogan:
+        name: slogan
+        description: ''
+        required: false
+        example: quod
+        type: string
+        custom: []
+      club:
+        name: club
+        description: ''
+        required: false
+        example: reprehenderit
+        type: string
+        custom: []
+      emergency_contact_name:
+        name: emergency_contact_name
+        description: ''
+        required: false
+        example: 'John Doe'
+        type: string
+        custom: []
+      emergency_contact_phone:
+        name: emergency_contact_phone
+        description: ''
+        required: false
+        example: '07851081623'
+        type: string
+        custom: []
+      tshirt_size:
+        name: tshirt_size
+        description: 'Must be one of <code>xxxs</code>, <code>xxs</code>, <code>xs</code>, <code>sm</code>, <code>m</code>, <code>l</code>, <code>xl</code>, <code>xxl</code>, or <code>xxxl</code>.'
+        required: false
+        example: xl
+        type: string
+        custom: []
+      preferred_heat_time:
+        name: preferred_heat_time
+        description: ''
+        required: false
+        example: tenetur
+        type: string
+        custom: []
+      raced_before:
+        name: raced_before
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      speak_with_coach:
+        name: speak_with_coach
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      hear_from_partner_charity:
+        name: hear_from_partner_charity
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      reason_for_participating:
+        name: reason_for_participating
+        description: ''
+        required: false
+        example: sed
+        type: string
+        custom: []
+      estimated_finish_time:
+        name: estimated_finish_time
+        description: ''
+        required: false
+        example: odio
+        type: string
+        custom: []
+      enable_family_registration:
+        name: enable_family_registration
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      custom_fields:
+        name: custom_fields
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      first_name: Marc
+      last_name: 'Roby AM'
+      phone: '447834418119'
+      profile:
+        gender: male
+        dob: 18-02-1980
+        city: London
+        state: England
+        address: 'Chelsea Studios 410-412 Fulham Road., London SW6 1EB, UK'
+        country: 'United Kingdom'
+        postcode: 'SW6 1EB'
+        nationality: British
+        occupation: 'Stock Broker'
+        passport_number: P5508000A
+        ethnicity: white_british
+      weekly_physical_activity: '1 - 2 days'
+      slogan: quod
+      club: reprehenderit
+      emergency_contact_name: 'John Doe'
+      emergency_contact_phone: '07851081623'
+      tshirt_size: xl
+      preferred_heat_time: tenetur
+      raced_before: false
+      speak_with_coach: false
+      hear_from_partner_charity: true
+      reason_for_participating: sed
+      estimated_finish_time: odio
+      enable_family_registration: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eZ41cfhD3bv8aVEg5d6aP6k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/entries/{participant}/verify-transfer'
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Check if the participant can be transferred to another event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The ref of the participant.'
+        required: true
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: ut
+      participant_ref: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The event event category ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanBodyParameters:
+      eec: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eaVdE3ZhvkDb6P6g8c415fa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/entries/{participant}/transfer'
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Transfer the participant to another event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: ''
+        required: true
+        example: quibusdam
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: |-
+          The participant ref. Example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+          //  * @queryParam eec string required The eec ref.
+        required: true
+        example: '975df0ab-6954-4636-8792-fd242aeb7ee9 // For emails - Transfer initiated by admin'
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: quibusdam
+      participant_ref: '975df0ab-6954-4636-8792-fd242aeb7ee9 // For emails - Transfer initiated by admin'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The event event category ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanBodyParameters:
+      eec: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P46Ehad8ZVg1abDv5cek3f6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/entries/{participant}/download'
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Download an entry'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      participant:
+        name: participant
+        description: ''
+        required: true
+        example: eos
+        type: string
+        custom: []
+      participant_ref:
+        name: participant_ref
+        description: 'The participant ref.'
+        required: true
+        example: 975df0ab-6954-4636-8792-fd242aeb7ee9
+        type: string
+        custom: []
+    cleanUrlParameters:
+      participant: eos
+      participant_ref: 975df0ab-6954-4636-8792-fd242aeb7ee9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 64ehPDc1f5Zavagd6EkV83b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/entries/delete
+    metadata:
+      groupName: Entries
+      groupDescription: 'Manages participants entries (registrations) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many participants (Soft delete)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      refs:
+        name: refs
+        description: ''
+        required: false
+        example:
+          - veritatis
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      refs:
+        - veritatis
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k6bZaDcheEvg3614dP58aVf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/entries/stats/summary
+    metadata:
+      groupName: Entries
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Entries Stats'
+      description: 'Get Entries Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Specifying method of filtering query by category.'
+        required: false
+        example: marathons
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: false
+        example: entries
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      category: marathons
+      type: entries
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P36a1fhc4E6eVdZ8kgba5Dv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/entries/stats/chart
+    metadata:
+      groupName: Entries
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Entries Chart data'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      type:
+        name: type
+        description: 'Specifying method of filtering query by type.'
+        required: true
+        example: entries
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Specifying method of filtering query by category.'
+        required: false
+        example: marathons
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      type: entries
+      year: '2022'
+      category: marathons
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kb6Df3Za86avV4Eh5cedPg1'
+    controller: null
+    method: null
+    route: null
+    custom: []

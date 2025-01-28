@@ -1,0 +1,693 @@
+name: 'Partner Events'
+description: 'Manages partner events on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event}/participants'
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the participants for an event'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: 'The event.'
+        required: true
+        example: tempora
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: tempora
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: ''
+        required: false
+        example: null
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: temporibus
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 88
+        type: integer
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 78
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: temporibus
+      page: 88
+      per_page: 78
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6vc4a6aefZkE3d18hD5PgVb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/partner-events
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of partner events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        name: category
+        description: 'The ref of the category.'
+        required: true
+        example: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Filter by year.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      month:
+        name: month
+        description: 'Filter by month.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      category: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+      page: 1
+    bodyParameters:
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      term:
+        name: term
+        description: ''
+        required: false
+        example: accusamus
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 9
+        type: number
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 20
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      term: accusamus
+      year: '2024'
+      month: 9
+      per_page: 20
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E6Dhdb1P6vaZ5aecVkg348f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/partner-events/participants/{event}/create'
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a participant'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: ''
+        required: true
+        example: pariatur
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: pariatur
+      event_ref: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 61dE6acZP8V3haev4bfgDk5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/partner-events/participants/{event}/create'
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a participant.'
+      description: 'The administrator or charity owners or charity users add participants to events through this endpoint.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: ''
+        required: true
+        example: occaecati
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: occaecati
+      event_ref: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: 'The ref of the event event category. Must be one of fgdhdfgdfhghfafwrrgrete345yh, gasghvjhavasvgjhvghvggjyyhvx, fhggjkalsugfujhvajvjhvaabjkvw.'
+        required: true
+        example: fhggjkalsugfujhvajvjhvaabjkvw
+        type: string
+        custom: []
+      charity:
+        name: charity
+        description: 'The ref of the charity. Must be one of .'
+        required: false
+        example: null
+        type: string
+        custom: []
+      payment_status:
+        name: payment_status
+        description: 'Must be one of <code>unpaid</code>, <code>paid</code>, <code>waived</code>, <code>refunded</code>, or <code>transferred</code>.'
+        required: true
+        example: unpaid
+        type: string
+        custom: []
+      waive:
+        name: waive
+        description: 'Must be one of <code>completely</code> or <code>partially</code>.'
+        required: false
+        example: completely
+        type: string
+        custom: []
+      waiver:
+        name: waiver
+        description: 'Must be one of <code>charity</code>, <code>corporate</code>, or <code>partner</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+      fee_type:
+        name: fee_type
+        description: 'Must be one of <code>local</code> or <code>international</code>.'
+        required: false
+        example: local
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: marc@runforcharity.com
+        type: string
+        custom: []
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: Marc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: 'Roby AM'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      eec: fhggjkalsugfujhvajvjhvaabjkvw
+      payment_status: unpaid
+      waive: completely
+      waiver: charity
+      fee_type: local
+      email: marc@runforcharity.com
+      first_name: Marc
+      last_name: 'Roby AM'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 83gv6fbPVadh6k5a4c1eZDE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/partner-events/{event}/export'
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export event participants'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: ''
+        required: true
+        example: ipsa
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: ipsa
+      event_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: ''
+        required: false
+        example: null
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      site:
+        name: site
+        description: 'Filter by site ref. The site to search in. This parameter is only available to users of role administrator when making requests from sportsmediaagency.com (That is, when making request to get data of the whole application - all the platforms).'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: fugit
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 88
+        type: integer
+        custom: []
+      site:
+        name: site
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 16
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: fugit
+      page: 88
+      per_page: 16
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vhe18f6653agcZkPbD4EadV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/book-events
+    metadata:
+      groupName: 'Partner Events'
+      groupDescription: 'Manages partner events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of partner events'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        name: category
+        description: 'The ref of the category.'
+        required: true
+        example: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Filter by year.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      month:
+        name: month
+        description: 'Filter by month.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      category: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+      page: 1
+    bodyParameters:
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 21
+        type: integer
+        custom: []
+      term:
+        name: term
+        description: ''
+        required: false
+        example: quaerat
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Must be 4 digits. Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: '2024'
+        type: string
+        custom: []
+      month:
+        name: month
+        description: 'Must be at least 1. Must not be greater than 12.'
+        required: false
+        example: 9
+        type: number
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 51
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 21
+      term: quaerat
+      year: '2024'
+      month: 9
+      per_page: 51
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aeV1463Z586bfaEchkDgvPd'
+    controller: null
+    method: null
+    route: null
+    custom: []

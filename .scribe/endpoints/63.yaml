@@ -1,0 +1,607 @@
+name: Payment
+description: 'Handles all payment related operations'
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/payment/webhook/intent
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle payment intent webhook events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/payment/webhook/link
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle payment link webhook events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/payment/webhook/charge
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle charge webhook events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/payment/webhook/method
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle payment method webhook events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/payment/checkout/meta
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the meta data'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 406
+        content: '{"status":false,"message":"Payment Controller - Site not found!","errors":"Site not found!"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/checkout/{type}/proceed'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Proceed to Checkout'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of participant_registration, participant_transfer, market_resale, charity_membership,partner_package_assignment,event_places,corporate_credit.'
+        required: true
+        example: participant_registration
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: participant_registration
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/checkout/{type}/{ongoing_external_transaction_ref}/pay'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Checkout - For events that require payment'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of participant_registration, participant_transfer, market_resale, charity_membership,partner_package_assignment,event_places,corporate_credit.'
+        required: true
+        example: participant_registration
+        type: string
+        custom: []
+      ongoing_external_transaction_ref:
+        name: ongoing_external_transaction_ref
+        description: 'The ref of the ongoing payment.'
+        required: true
+        example: 97ad9df6-d927-4a44-8fec-3daacee89678
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: participant_registration
+      ongoing_external_transaction_ref: 97ad9df6-d927-4a44-8fec-3daacee89678
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/checkout/{type}/free'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Checkout - For free events'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      type:
+        name: type
+        description: 'The entity payment is made for. Must be one of participant_registration, participant_transfer, market_resale, charity_membership,partner_package_assignment,event_places,corporate_credit.'
+        required: true
+        example: participant_registration
+        type: string
+        custom: []
+    cleanUrlParameters:
+      type: participant_registration
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/checkout/{id}/confirm'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Checkout - Confirm payment'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the payment intent'
+        required: true
+        example: pi_3MtweELkdIwHu7ix0Dt0gF2H
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: pi_3MtweELkdIwHu7ix0Dt0gF2H
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/payment/checkout/{ongoing_external_transaction_ref}/response'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle post payment response'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ongoing_external_transaction_ref:
+        name: ongoing_external_transaction_ref
+        description: ''
+        required: true
+        example: at
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ongoing_external_transaction_ref: at
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 406
+        content: '{"status":false,"message":"Payment Controller - Site not found!","errors":"Site not found!"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/payment/payment-methods/create
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment methods related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create and attach payment method to customer'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The payment method id.'
+        required: true
+        example: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      type:
+        name: type
+        description: 'Must be one of <code>wallet</code>, <code>card</code>, <code>paypal</code>, <code>apple_pay</code>, <code>google_pay</code>, <code>bacs_debit</code>, or <code>link</code>.'
+        required: true
+        example: card
+        type: string
+        custom: []
+      exp_month:
+        name: exp_month
+        description: 'Must be a valid date in the format <code>m</code>.'
+        required: false
+        example: 9
+        type: string
+        custom: []
+      exp_year:
+        name: exp_year
+        description: 'Must be a valid date in the format <code>Y</code>.'
+        required: false
+        example: 2025-05-27T10:56:34+00:00
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'Must be 16 digits.'
+        required: false
+        example: 424242424242
+        type: string
+        custom: []
+      cvc:
+        name: cvc
+        description: 'Must be 3 digits.'
+        required: false
+        example: 123
+        type: string
+        custom: []
+      account_number:
+        name: account_number
+        description: ''
+        required: false
+        example: 5349
+        type: string
+        custom: []
+      sort_code:
+        name: sort_code
+        description: ''
+        required: false
+        example: -40
+        type: string
+        custom: []
+    cleanBodyParameters:
+      type: card
+      exp_month: 9
+      exp_year: 2025-05-27T10:56:34+00:00
+      number: 424242424242
+      cvc: 123
+      account_number: 5349
+      sort_code: -40
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZkEa1VP4Dv6cd3f8hgae5b6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/payment-methods/{id}/attach'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment methods related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Attach payment method to customer'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The payment method id.'
+        required: true
+        example: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZDv4fg6b3ehPE8165cdakV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/payment-methods/{id}/detach'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment methods related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Detach payment method from customer'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The payment method id.'
+        required: true
+        example: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: pm_1MqLiJLkdIwHu7ixUEgbFdYF
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vacE1kh8e653VaDZ4bPgdf6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/payment/payment-methods/{id}/list'
+    metadata:
+      groupName: Payment
+      groupDescription: 'Handles all payment methods related operations'
+      subgroup: ''
+      subgroupDescription: ''
+      title: "List a customer's payment methods"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the payment method.'
+        required: true
+        example: cumque
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: cumque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer v3cVfZ4hE5dD66kba18aPge'
+    controller: null
+    method: null
+    route: null
+    custom: []

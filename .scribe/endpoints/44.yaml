@@ -1,0 +1,981 @@
+name: Sponsors
+description: |-
+
+  Manages sponsors.
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sponsors
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of sponsors.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      drafted:
+        name: drafted
+        description: 'Specifying how to interact with drafted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:desc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      drafted: with
+      deleted: with
+      page: 1
+      order_by: 'name:desc,created_at:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: facilis
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 37
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 42
+        type: integer
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - commodi
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: facilis
+      popular: false
+      page: 37
+      per_page: 42
+      drafted: with
+      deleted: without
+      order_by:
+        - commodi
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e5Vdc6f1Dah3agvb8P4EkZ6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sponsors/all
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated sponsors for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 46
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 78
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: et
+      page: 46
+      per_page: 78
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZkcaD3fEev1d8gVP4h6a5b6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sponsors/create
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a sponsor.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4caag3fvkDb6Ze8dVh56PE1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/sponsors/create
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a sponsor'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the sponsor. This field is required when <code>site_id</code> is present.'
+        required: false
+        example: 'sponsor name'
+        type: string
+        custom: []
+      site_id:
+        name: site_id
+        description: 'The site id.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      description:
+        name: description
+        description: 'The description of the sponsor.'
+        required: false
+        example: 'Sponsor description'
+        type: string
+        custom: []
+      is_draft:
+        name: is_draft
+        description: 'save the new entity as a draft or not.'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      name: 'sponsor name'
+      site_id: 1
+      description: 'Sponsor description'
+      is_draft: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3eaZf14cdDE5P6kvhVb8a6g'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/sponsors/{ref}/details'
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Sponsor details.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: saepe
+        type: string
+        custom: []
+      sponsor_ref:
+        name: sponsor_ref
+        description: 'The ref of the sponsor.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: saepe
+      sponsor_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ed63Ea6h1v4Z5Pg8akDfcbV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/sponsors/{ref}/edit'
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a sponsor.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: veniam
+        type: string
+        custom: []
+      sponsor_ref:
+        name: sponsor_ref
+        description: 'The ref of the sponsor.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: veniam
+      sponsor_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4vZ5haVeck8E36b6agP1fDd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sponsors/export
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export Sponsors'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:desc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      order_by: 'name:desc,created_at:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: voluptatum
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 17
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 80
+        type: integer
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - architecto
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: voluptatum
+      popular: true
+      page: 17
+      per_page: 80
+      drafted: only
+      deleted: with
+      order_by:
+        - architecto
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V6PD1vhZ58gafdEeck634ab'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/sponsors/{ref}/update'
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update sponsor'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: eos
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: eos
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      site_id:
+        name: site_id
+        description: 'The site id. This field is required when <code>name</code> is present.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      name:
+        name: name
+        description: 'The name of the sponor. This field is required when <code>site_id</code> is present.'
+        required: false
+        example: 'Sponsor name'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The description of the sponsor.'
+        required: false
+        example: 'Sponsor description'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      site_id: 1
+      name: 'Sponsor name'
+      description: 'Sponsor description'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6kdaEcaDfh6e1Pg4Zb85vV3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/sponsors/draft
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as draft one or many sponsors'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with sponsors.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aEfeVh35b8ag6kZPc6Dvd41'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/sponsors/publish
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as published one or many sponsors'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with sponsors.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1afc4eDv6a5PbgkdZV83hE6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/sponsors/delete
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many sponsors'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with sponsors.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4bfcPZav6hEgDa56V8e31dk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/sponsors/restore
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore One or many sponsors'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with sponsors.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8gVhvPe6baDa6E5f4kZc1d3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/sponsors/delete/force
+    metadata:
+      groupName: Sponsors
+      groupDescription: |-
+
+        Manages sponsors.
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Delete one or many sponsors permanently
+        Only Administrator can delete a sponsor permanently.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with sponsors.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer faDc6eaPgV6h841EdZkb3v5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sponsors/stats/summary
+    metadata:
+      groupName: Sponsors
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Sponsor Stats'
+      description: 'Get Sponsor Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zghd8656Dfbaek41PEvcVa3'
+    controller: null
+    method: null
+    route: null
+    custom: []

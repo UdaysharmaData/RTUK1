@@ -1,0 +1,38 @@
+name: Testing
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/testing
+    metadata:
+      groupName: Testing
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Testing sections on the application'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer khcaE1gv5ae3d8VbZ6f46PD'
+    controller: null
+    method: null
+    route: null
+    custom: []

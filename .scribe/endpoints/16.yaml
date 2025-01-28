@@ -1,0 +1,525 @@
+name: Audience
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/audiences
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Audience'
+      description: 'Get paginated list of audiences.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Specifying a keyword similar to audience name, or description.'
+        required: false
+        example: 'audience name'
+        type: string
+        custom: []
+      source:
+        name: source
+        description: 'Specifying the source attribute of the audience entity.'
+        required: false
+        example: emails
+        type: string
+        custom: []
+      author:
+        name: author
+        description: 'Specifying the author role.'
+        required: false
+        example: administrator
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Overriding the default (10) number of listings per-page.'
+        required: false
+        example: '20'
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:desc'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      deleted: with
+      term: 'audience name'
+      source: emails
+      author: administrator
+      per_page: '20'
+      order_by: 'name:desc,created_at:desc'
+    bodyParameters:
+      term:
+        name: term
+        description: 'Must not be greater than 50 characters.'
+        required: false
+        example: nyhttwje
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 2
+        type: number
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - sunt
+        type: 'string[]'
+        custom: []
+      source:
+        name: source
+        description: 'Must be one of <code>emails</code> or <code>mailing list</code>.'
+        required: false
+        example: emails
+        type: string
+        custom: []
+      role:
+        name: role
+        description: 'Must be one of <code>administrator</code>, <code>account_manager</code>, <code>charity</code>, <code>developer</code>, <code>charity_user</code>, <code>partner</code>, <code>participant</code>, <code>event_manager</code>, <code>corporate</code>, <code>runthrough_data</code>, or <code>content_manager</code>.'
+        required: false
+        example: charity
+        type: string
+        custom: []
+    cleanBodyParameters:
+      term: nyhttwje
+      per_page: 2
+      drafted: only
+      deleted: with
+      order_by:
+        - sunt
+      source: emails
+      role: charity
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/audiences/create
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Audience Options'
+      description: 'Retrieve audience creation options data.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Ecfgahb54DV6a61e8vPZdk3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/audiences/{ref}/edit'
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Audience Options - portal'
+      description: 'Retrieve audience creation options data.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: 'The ref attribute of the page.'
+        required: true
+        example: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 84ca1EDdvbf5PZ366ghkeVa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/audiences/delete
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Audiences'
+      description: 'Delete multiple audiences data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      permanently:
+        name: permanently
+        description: 'Optionally specifying to force-delete model, instead of the default soft-delete.'
+        required: false
+        example: '1'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      permanently: '1'
+    bodyParameters:
+      audiences_ids:
+        name: audiences_ids
+        description: 'The list of ids associated with pages.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      audiences_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kd3f581ehvaPbE6VcZgD6a4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/audiences/restore
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore Many Audiences'
+      description: 'Restore multiple audiences data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      audiences_ids:
+        name: audiences_ids
+        description: 'The list of ids associated with audiences.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      audiences_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3DPvakabVE846g6d1Ze5fch'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/audiences/{audience_ref}/mailing-list/delete'
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Delete Audiences' Mailing List Items"
+      description: "Delete audiences' mailing list data by specifying their ids."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      audience_ref:
+        name: audience_ref
+        description: ''
+        required: true
+        example: qui
+        type: string
+        custom: []
+    cleanUrlParameters:
+      audience_ref: qui
+    queryParameters:
+      permanently:
+        name: permanently
+        description: 'Optionally specifying to force-delete model, instead of the default soft-delete.'
+        required: false
+        example: '1'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      permanently: '1'
+    bodyParameters:
+      mailing_lists_ids:
+        name: mailing_lists_ids
+        description: 'The list of ids associated with mailing_lists.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      mailing_lists_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ge61DEfP5cZ8bvdV6a3kha4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/audiences/{audience_ref}/mailing-list/restore'
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Restore Audiences' Mailing List Items"
+      description: "Restore audiences' mailing list data by specifying their ids."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      audience_ref:
+        name: audience_ref
+        description: ''
+        required: true
+        example: aut
+        type: string
+        custom: []
+    cleanUrlParameters:
+      audience_ref: aut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      mailing_lists_ids:
+        name: mailing_lists_ids
+        description: 'The list of ids associated with mailing_lists.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      mailing_lists_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fVa4egZkPDab3658vdE16ch'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/audiences/stats/summary
+    metadata:
+      groupName: Audience
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Audience Stats'
+      description: 'Get Audience Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 438hEPefba616VgDcvk5adZ'
+    controller: null
+    method: null
+    route: null
+    custom: []

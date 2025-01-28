@@ -1,0 +1,43 @@
+name: Stats
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/stats
+    metadata:
+      groupName: Stats
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Stats'
+      description: 'Get platform stats.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":true,"message":"Platform Stats.","data":{"stats":{"users":92,"events":3,"participants":2}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,1680 @@
+name: Regions
+description: 'Manages regions on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/regions/all
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated regions for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: 'Filter by country.'
+        required: false
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Specifying the inclusion of ONLY pages with associated FAQs. Should be one of with, without.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      country: 'United Kingdom'
+      faqs: with
+      page: 1
+    bodyParameters:
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      term:
+        name: term
+        description: ''
+        required: false
+        example: a
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: nihil
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 70
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 86
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      faqs: without
+      term: a
+      country: nihil
+      page: 70
+      per_page: 86
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zv5g8kVP6hfb4d613DaecaE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/regions
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: 'Filter by country.'
+        required: false
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:desc'
+        type: string
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Specifying how to interact with drafted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      country: 'United Kingdom'
+      order_by: 'name:desc,created_at:desc'
+      drafted: with
+      deleted: with
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: possimus
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: libero
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 75
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 11
+        type: integer
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - perferendis
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: possimus
+      country: libero
+      faqs: with
+      page: 75
+      per_page: 11
+      drafted: only
+      deleted: only
+      order_by:
+        - perferendis
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gfkcE6D453aadv81eZ6hVbP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/regions/create
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a region'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VE435kevabhP61d68gcDafZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/regions/create
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a region'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the region. This field is required when <code>site_id</code> is present.'
+        required: false
+        example: Midlands
+        type: string
+        custom: []
+      site_id:
+        name: site_id
+        description: 'The site id.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+      country:
+        name: country
+        description: 'The country of the region.'
+        required: true
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The description of the region.'
+        required: false
+        example: 'Description of Midlands'
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - follow
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      gallery:
+        name: gallery
+        description: ''
+        required: true
+        example:
+          - aspernatur
+        type: 'string[]'
+        custom: []
+      is_draft:
+        name: is_draft
+        description: 'save the new entity as a draft or not.'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: 'The FAQ section.'
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: 'The FAQ description.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: 'This field is required when <code>faqs.*</code> is present.'
+        required: false
+        example:
+          - qui
+        type: 'string[]'
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: ''
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: 'This field is required when <code>faqs.*.details.*.question</code> is present.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: 'Image Ref.'
+        required: false
+        example:
+          - 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      name: Midlands
+      site_id: 2
+      country: 'United Kingdom'
+      description: 'Description of Midlands'
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - follow
+        canonical_url: 'https://example.com'
+      faqs:
+        -
+          section: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+          description: |-
+            Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                            Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                            Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                            Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                            Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                            Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+          details:
+            - qui
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      gallery:
+        - aspernatur
+      is_draft: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eP66hEg14fk3a8c5VvbDdZa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/regions/{region}/details'
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Get a region's details."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region:
+        name: region
+        description: 'The region.'
+        required: true
+        example: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+        type: string
+        custom: []
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6gcbE485dVaka6PfZ3veh1D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/regions/{ref}/edit'
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a region'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      ref:
+        name: ref
+        description: ''
+        required: true
+        example: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+        type: string
+        custom: []
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      ref: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Dda4kvhg6f5V6eZaE31Pc8b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/regions/export
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,created_at:desc'
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+      order_by: 'name:desc,created_at:desc'
+      deleted: with
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: ea
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: commodi
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 45
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 34
+        type: integer
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - illum
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      term: ea
+      country: commodi
+      faqs: without
+      page: 45
+      per_page: 34
+      drafted: without
+      deleted: only
+      order_by:
+        - illum
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gbDkZca4eV6v8a1fEd3P5h6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/regions/{region_ref}/update'
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a region'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      site_id:
+        name: site_id
+        description: 'The site id of the region. This field is required when <code>name</code> is present.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      name:
+        name: name
+        description: 'The name of the region. This field is required when <code>site_id</code> is present.'
+        required: false
+        example: 'region name'
+        type: string
+        custom: []
+      country:
+        name: country
+        description: 'The country of the region.'
+        required: true
+        example: 'region country'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'The description of the region.'
+        required: false
+        example: 'region description'
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - noindex
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: ''
+        required: false
+        example:
+          - veniam
+        type: 'integer[]'
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      gallery:
+        name: gallery
+        description: ''
+        required: true
+        example:
+          - quam
+        type: 'string[]'
+        custom: []
+      'faqs[].faq_id':
+        name: 'faqs[].faq_id'
+        description: 'The FAQ id.'
+        required: false
+        example: 51
+        type: integer
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: 'The FAQ section. This field is required when <code>faqs.*.faq_id</code> is not present.'
+        required: false
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: 'The FAQ description.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: 'This field is required when <code>faqs.*</code> is present.'
+        required: false
+        example:
+          - dolores
+        type: 'integer[]'
+        custom: []
+      'faqs[].details[].details_id':
+        name: 'faqs[].details[].details_id'
+        description: 'Must be one of <code></code>.'
+        required: false
+        example: 76
+        type: integer
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: 'This field is required when <code>faqs.*.details.*.details_id</code> is not present.'
+        required: false
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: 'This field is required when <code>faqs.*.details.*.details_id</code> is not present.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: 'Image Ref.'
+        required: true
+        example:
+          - 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      site_id: 2
+      name: 'region name'
+      country: 'region country'
+      description: 'region description'
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - noindex
+        canonical_url: 'https://example.com'
+      faqs:
+        - veniam
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      gallery:
+        - quam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EZDPc6bd4eV1f5ga3avh86k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/regions/draft
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as draft one or many regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with regions.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer chg4fe613a68aVEd5bkZvPD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/regions/delete
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete one or many regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with regions.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c8ab4dV6g16kZehE5D3vafP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/regions/restore
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore One or many regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with regions.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 13DPe6cfgaV6aZbhv4k5E8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/regions/delete/force
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Delete one or many regions (Permanently)
+        Only the administrator can delete a region permanently.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with regions.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PVah1ck6Z58f6daD4gbve3E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/regions/{region_ref}/image/{upload_ref}/delete'
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Delete the region's image"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      upload_ref:
+        name: upload_ref
+        description: 'The ref of the upload.'
+        required: true
+        example: 97ad9df6-d927-4a44-8fec-3daacee89678
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      upload_ref: 97ad9df6-d927-4a44-8fec-3daacee89678
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hf6Pgbc68ZEe41DV3aakdv5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/regions/{region_ref}/delete-faqs'
+    metadata:
+      groupName: Regions
+      groupDescription: 'Manages regions on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQs'
+      description: 'Delete multiple Region FAQs by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faqs_ids:
+        name: faqs_ids
+        description: 'The list of ids associated with specific region FAQs ids.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faqs_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dVc86fZ53ha1Db6g4EPkaev'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/regions/{region_ref}/{faq_ref}/delete-faq-details'
+    metadata:
+      groupName: Regions
+      groupDescription: 'Manages regions on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQ Details'
+      description: 'Delete multiple Page FAQ details by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region_ref:
+        name: region_ref
+        description: 'The ref of the region.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      faq_ref:
+        name: faq_ref
+        description: 'The ref of the faq.'
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      faq_ref: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faq_details_ids:
+        name: faq_details_ids
+        description: 'The list of ids associated with specific page faq_details ids.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faq_details_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1evdZDV8c56hPEa6akbf43g'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/regions/{region_ref}/{faq_ref}/{faq_details_ref}/faq-details-image/{upload_ref}/delete'
+    metadata:
+      groupName: Regions
+      groupDescription: 'Manages regions on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove faq details image'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      region_ref:
+        name: region_ref
+        description: ''
+        required: true
+        example: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+        type: string
+        custom: []
+      faq_ref:
+        name: faq_ref
+        description: ''
+        required: true
+        example: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+        type: string
+        custom: []
+      faq_details_ref:
+        name: faq_details_ref
+        description: ''
+        required: true
+        example: vitae
+        type: string
+        custom: []
+      upload_ref:
+        name: upload_ref
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+    cleanUrlParameters:
+      region_ref: 98834c30-5e02-4179-afbf-a00ae68f2d2f
+      faq_ref: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+      faq_details_ref: vitae
+      upload_ref: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Dcga186PbaZfh6d4vEek5V3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/regions/stats/summary
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Region Stats'
+      description: 'Get Region Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      period: 24h
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5vdfPak14gZe6a38hE6cbDV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/regions/all
+    metadata:
+      groupName: Regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated regions for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      country:
+        name: country
+        description: 'Filter by country.'
+        required: false
+        example: 'United Kingdom'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Specifying the inclusion of ONLY pages with associated FAQs. Should be one of with, without.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      country: 'United Kingdom'
+      faqs: with
+      page: 1
+    bodyParameters:
+      faqs:
+        name: faqs
+        description: 'Must be one of <code>with</code> or <code>without</code>.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      term:
+        name: term
+        description: ''
+        required: false
+        example: officiis
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 21
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 40
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      faqs: with
+      term: officiis
+      country: ut
+      page: 21
+      per_page: 40
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"status":false,"message":"Unauthorized","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 65c8ahbeaP16gfE3DkV4vdZ'
+    controller: null
+    method: null
+    route: null
+    custom: []

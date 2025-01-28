@@ -1,0 +1,1864 @@
+name: Combination
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/combinations
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Combinations'
+      description: 'Get paginated list of combinations.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      drafted:
+        name: drafted
+        description: 'Specifying how to interact with drafted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Specifying how to interact with soft-deleted items.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Specifying a keyword similar to combination name, meta title, meta description, event category name, region name/description, city name/description, venue name/description.'
+        required: false
+        example: 'some combination name'
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Overriding the default (10) number of listings per-page.'
+        required: false
+        example: '20'
+        type: string
+        custom: []
+      meta_keywords:
+        name: meta_keywords
+        description: "Specifying comma seperated values matching items in combination's meta keywords attribute array."
+        required: false
+        example: keyword-1
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Specifying the inclusion of ONLY models with associated FAQs.'
+        required: false
+        example: with
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Filter by specifying a period.'
+        required: false
+        example: '1h,6h,12h,24h,7d,30d,90d,180d,1y,All'
+        type: string
+        custom: []
+      year:
+        name: year
+        description: 'Filter by specifying a year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: 'Specifying method of ordering query. Multiple values can be provided by listing items separated by comma.'
+        required: false
+        example: 'name:desc,url:asc,created_at:desc'
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category, using a valid ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region, using a valid ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Filter by city, using a valid ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: 'Filter by venue, using a valid ref.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters:
+      drafted: with
+      deleted: with
+      term: 'some combination name'
+      per_page: '20'
+      meta_keywords: keyword-1
+      faqs: with
+      period: '1h,6h,12h,24h,7d,30d,90d,180d,1y,All'
+      year: '2022'
+      order_by: 'name:desc,url:asc,created_at:desc'
+    bodyParameters:
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: inventore
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: soluta
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: recusandae
+        type: string
+        custom: []
+      deleted:
+        name: deleted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      drafted:
+        name: drafted
+        description: 'Must be one of <code>with</code>, <code>without</code>, or <code>only</code>.'
+        required: false
+        example: without
+        type: string
+        custom: []
+      order_by:
+        name: order_by
+        description: ''
+        required: false
+        example:
+          - qui
+        type: 'string[]'
+        custom: []
+      term:
+        name: term
+        description: 'Must not be greater than 50 characters.'
+        required: false
+        example: ctdxsntbjrxwgfomdq
+        type: string
+        custom: []
+    cleanBodyParameters:
+      region: inventore
+      city: soluta
+      venue: recusandae
+      deleted: only
+      drafted: without
+      order_by:
+        - qui
+      term: ctdxsntbjrxwgfomdq
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kaaf43V1cEhDZ5v8Pgdbe66'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/combinations/create
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Combination Options'
+      description: 'Retrieve combination creation options data.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ED163egvhVPdfa5Zc84akb6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/combinations/{combination}/edit'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Combination'
+      description: 'Retrieve combination data matching specified ref attribute.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      combination:
+        name: combination
+        description: 'The combination.'
+        required: true
+        example: dicta
+        type: string
+        custom: []
+      ref:
+        name: ref
+        description: 'The ref attribute of the page.'
+        required: true
+        example: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+        type: string
+        custom: []
+    cleanUrlParameters:
+      combination: dicta
+      ref: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a466hkdVPfZ1e5gvb8cDa3E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/combinations/store
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new Combination'
+      description: 'A new combination can be created with optional FAQs properties for combinations that requires FAQs.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Specifies combination name attribute.'
+        required: true
+        example: 'FAQs Combination'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Specifies combination description attribute.'
+        required: false
+        example: 'Some details'
+        type: string
+        custom: []
+      event_category_id:
+        name: event_category_id
+        description: 'Specifies an event category id.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      region_id:
+        name: region_id
+        description: 'Specifies a region id.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+      city_id:
+        name: city_id
+        description: 'Specifies a city id.'
+        required: true
+        example: 3
+        type: integer
+        custom: []
+      venue_id:
+        name: venue_id
+        description: 'Specifies a venue id.'
+        required: true
+        example: 4
+        type: integer
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      gallery:
+        name: gallery
+        description: ''
+        required: true
+        example:
+          - velit
+        type: 'string[]'
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - nofollow
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      is_draft:
+        name: is_draft
+        description: 'save the new entity as a draft or not.'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      path:
+        name: path
+        description: 'Specifies combination path attribute. Must start with one of <code>/</code>.'
+        required: false
+        example: /path/to/combination
+        type: string
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: 'The FAQ section.'
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: 'The FAQ description.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: 'This field is required when <code>faqs.*</code> is present.'
+        required: false
+        example:
+          - excepturi
+        type: 'string[]'
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: ''
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: 'This field is required when <code>faqs.*.details.*.question</code> is present.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: 'Image Ref.'
+        required: false
+        example:
+          - 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      name: 'FAQs Combination'
+      description: 'Some details'
+      event_category_id: 1
+      region_id: 2
+      city_id: 3
+      venue_id: 4
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      gallery:
+        - velit
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - nofollow
+        canonical_url: 'https://example.com'
+      faqs:
+        -
+          section: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+          description: |-
+            Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                            Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                            Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                            Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                            Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                            Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+          details:
+            - excepturi
+      is_draft: false
+      path: /path/to/combination
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1Da3EeV486bPcv5gZa6khfd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/portal/combinations/{combination_ref}/update'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a Combination'
+      description: 'An existing combination can be modified, alongside their FAQs properties when necessary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      combination_ref:
+        name: combination_ref
+        description: ''
+        required: true
+        example: qui
+        type: string
+        custom: []
+      ref:
+        name: ref
+        description: 'The ref attribute of the page.'
+        required: true
+        example: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+        type: string
+        custom: []
+    cleanUrlParameters:
+      combination_ref: qui
+      ref: 97f62d3d-bf9d-42ac-88c4-9d56cd910d7a
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Specifies combination name attribute.'
+        required: false
+        example: 'FAQs Combination'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Specifies combination description attribute.'
+        required: false
+        example: 'Some details'
+        type: string
+        custom: []
+      event_category_id:
+        name: event_category_id
+        description: 'Specifies an event category id.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      region_id:
+        name: region_id
+        description: 'Specifies a region id.'
+        required: false
+        example: '2'
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: 'Specifies a city id.'
+        required: false
+        example: 3
+        type: integer
+        custom: []
+      venue_id:
+        name: venue_id
+        description: 'Specifies a venue id.'
+        required: false
+        example: 4
+        type: integer
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: string
+        custom: []
+      gallery:
+        name: gallery
+        description: ''
+        required: true
+        example:
+          - voluptatem
+        type: 'string[]'
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: 'Specifies title metadata.'
+        required: false
+        example: Title
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: 'Specifies description metadata for combination. Must not be greater than 255 characters.'
+        required: false
+        example: 'Some description.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: 'Specifies an array of keywords metadata for combination.'
+        required: true
+        example:
+          - tag
+        type: 'string[]'
+        custom: []
+      meta.robots:
+        name: meta.robots
+        description: 'Must be one of <code>index</code>, <code>noindex</code>, <code>follow</code>, or <code>nofollow</code>.'
+        required: true
+        example:
+          - noindex
+        type: 'string[]'
+        custom: []
+      meta.canonical_url:
+        name: meta.canonical_url
+        description: 'The canonical url. Must not be greater than 255 characters.'
+        required: false
+        example: 'https://example.com'
+        type: string
+        custom: []
+      faqs:
+        name: faqs
+        description: ''
+        required: false
+        example:
+          - nihil
+        type: 'integer[]'
+        custom: []
+      path:
+        name: path
+        description: 'Specifies combination path attribute. Must start with one of <code>/</code>.'
+        required: false
+        example: /path/to/combination
+        type: string
+        custom: []
+      'faqs[].faq_id':
+        name: 'faqs[].faq_id'
+        description: 'The FAQ id.'
+        required: false
+        example: 36
+        type: integer
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: 'The FAQ section. This field is required when <code>faqs.*.faq_id</code> is not present.'
+        required: false
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: 'The FAQ description.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: 'This field is required when <code>faqs.*</code> is present.'
+        required: false
+        example:
+          - qui
+        type: 'integer[]'
+        custom: []
+      'faqs[].details[].details_id':
+        name: 'faqs[].details[].details_id'
+        description: 'Must be one of <code></code>.'
+        required: false
+        example: 69
+        type: integer
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: 'This field is required when <code>faqs.*.details.*.details_id</code> is not present.'
+        required: false
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: 'This field is required when <code>faqs.*.details.*.details_id</code> is not present.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: 'Image Ref.'
+        required: true
+        example:
+          - 97ad9df6-bc08-4729-b95e-3671dc6192c2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      name: 'FAQs Combination'
+      description: 'Some details'
+      event_category_id: 1
+      region_id: '2'
+      city_id: 3
+      venue_id: 4
+      image: 97ad9df6-bc08-4729-b95e-3671dc6192c2
+      gallery:
+        - voluptatem
+      meta:
+        title: Title
+        description: 'Some description.'
+        keywords:
+          - tag
+        robots:
+          - noindex
+        canonical_url: 'https://example.com'
+      faqs:
+        - nihil
+      path: /path/to/combination
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ef3cDV8agkahbP54Z6Ed61v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/combinations/publish
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as published one or many combinations'
+      description: 'Publish multiple combinations data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'The list of ids associated with combinations.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer acbdP6VDgekva415h3EZf86'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/combinations/draft
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as draft one or many combinations'
+      description: 'Draft multiple combinations data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'The list of ids associated with combinations.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vdPVDcgb86kZEf365eha41a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/v1/portal/combinations/delete-many
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Many Combinations'
+      description: 'Delete multiple combinations data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      permanently:
+        name: permanently
+        description: 'Optionally specifying to force-delete model, instead of the default soft-delete.'
+        required: false
+        example: '1'
+        type: string
+        custom: []
+    cleanQueryParameters:
+      permanently: '1'
+    bodyParameters:
+      combinations_ids:
+        name: combinations_ids
+        description: 'The list of ids associated with combinations.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      combinations_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gV1vda5Zf3b8acD4khe66EP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/combinations/restore-many
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore Many Combinations'
+      description: 'Restore multiple combinations data by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      combinations_ids:
+        name: combinations_ids
+        description: 'The list of ids associated with combinations.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      combinations_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zvh5PeD8bk6a1c6a4d3EfVg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/combinations/{combination_ref}/delete-faqs'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQs'
+      description: 'Delete multiple Combination FAQs by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      combination_ref:
+        name: combination_ref
+        description: ''
+        required: true
+        example: assumenda
+        type: string
+        custom: []
+    cleanUrlParameters:
+      combination_ref: assumenda
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faqs_ids:
+        name: faqs_ids
+        description: 'The list of ids associated with specific combination FAQs ids.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faqs_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 53akhaZDPf18e66Egv4cdVb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/combinations/{combination_ref}/{faq_ref}/delete-faq-details'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete One/Many FAQ Details'
+      description: 'Delete multiple Combination FAQ details by specifying their ids.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      combination_ref:
+        name: combination_ref
+        description: ''
+        required: true
+        example: sit
+        type: string
+        custom: []
+      faq_ref:
+        name: faq_ref
+        description: ''
+        required: true
+        example: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+        type: string
+        custom: []
+    cleanUrlParameters:
+      combination_ref: sit
+      faq_ref: 97f9bd34-499a-4a5e-bd6f-6e0436a0ca78
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faq_details_ids:
+        name: faq_details_ids
+        description: 'The list of ids associated with specific page faq_details ids.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      faq_details_ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k4ZbVf1E5vea6cgdDah83P6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/combinations/{combination_ref}/delete-meta'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Meta'
+      description: 'Delete Combination Meta.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      combination_ref:
+        name: combination_ref
+        description: ''
+        required: true
+        example: neque
+        type: string
+        custom: []
+    cleanUrlParameters:
+      combination_ref: neque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 36Z5gEV8Df14avhd6baekPc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/combinations/stats/summary
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Combination Stats'
+      description: 'Get Combination Stats Summary.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      year:
+        name: year
+        description: 'Specifying method of filtering query by year.'
+        required: false
+        example: '2022'
+        type: string
+        custom: []
+      period:
+        name: period
+        description: 'Specifying method of filtering query by time period.'
+        required: false
+        example: 24h
+        type: string
+        custom: []
+      type:
+        name: type
+        description: 'Specifying method of filtering query by related entity types.'
+        required: false
+        example: cities
+        type: string
+        custom: []
+    cleanQueryParameters:
+      year: '2022'
+      period: 24h
+      type: cities
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V6Ph1k3vb6Efgdae4cZ8a5D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/combinations
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Client Combinations'
+      description: 'Get paginated list of combinations on Client page.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Specifying a keyword similar to combination name, meta title, meta description, event category name, region name/description, city name/description, venue name/description.'
+        required: false
+        example: 'some combination name'
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Overriding the default (10) number of listings per-page.'
+        required: false
+        example: '20'
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: 'Filter by most popular.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    cleanQueryParameters:
+      term: 'some combination name'
+      per_page: '20'
+      popular: true
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: fuga
+        type: string
+        custom: []
+      popular:
+        name: popular
+        description: ''
+        required: false
+        example: dolore
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 25
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: fuga
+      popular: dolore
+      per_page: 25
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":true,"message":"Combinations List","data":{"combinations":{"current_page":1,"data":[],"first_page_url":"https:\/\/api.test\/api\/v1\/client\/combinations?term=some%20combination%20name&per_page=20&popular=1&page=1","from":null,"last_page":1,"last_page_url":"https:\/\/api.test\/api\/v1\/client\/combinations?term=some%20combination%20name&per_page=20&popular=1&page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/api.test\/api\/v1\/client\/combinations?term=some%20combination%20name&per_page=20&popular=1&page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"https:\/\/api.test\/api\/v1\/client\/combinations","per_page":25,"prev_page_url":null,"to":null,"total":0,"query_params":{"term":"some combination name","per_page":"20","popular":true}}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/client/combinations/{id}'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Client Combination'
+      description: 'Retrieve combination data matching specified slug attribute on client page.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the combination.'
+        required: true
+        example: esse
+        type: string
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug attribute of the page.'
+        required: true
+        example: some-combination-name
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: esse
+      slug: some-combination-name
+    queryParameters:
+      name:
+        name: name
+        description: 'Filter by name. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Filter by event category ref.'
+        required: false
+        example: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+        type: string
+        custom: []
+      dates:
+        name: dates
+        description: 'Filter by a range of dates. Must be a valid date in the format d-m-Y.'
+        required: false
+        example:
+          - 22-02-2018
+          - 22-10-2023
+        type: 'string[]'
+        custom: []
+      price:
+        name: price
+        description: 'Filter by a price range.'
+        required: false
+        example:
+          - 12
+          - 80
+        type: 'integer[]'
+        custom: []
+      region:
+        name: region
+        description: 'Filter by region id.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'Filter by address.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      date:
+        name: date
+        description: 'Filter by date. Must be one of newest, oldest, this_year, next_year, next_3_months, next_6_months, 2022-09, 2022-10.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      category: 97d417f7-082f-4ca8-bc4a-ba9b2cb3fc4d
+      dates:
+        - 22-02-2018
+        - 22-10-2023
+      price:
+        - 12
+        - 80
+      per_page: 10
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: voluptatem
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: praesentium
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: voluptate
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: minima
+        type: string
+        custom: []
+      dates:
+        name: dates
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example:
+          - 27-05-2024
+        type: 'string[]'
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: false
+        example:
+          - 12
+        type: 'integer[]'
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: corporis
+        type: string
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Must be one of <code>include</code>, <code>exclude</code>, or <code>only</code>.'
+        required: false
+        example: exclude
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: false
+        example: rerum
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 63
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 57
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: voluptatem
+      region: praesentium
+      city: voluptate
+      venue: minima
+      dates:
+        - 27-05-2024
+      price:
+        - 12
+      address: corporis
+      virtual_events: exclude
+      date: rerum
+      page: 63
+      per_page: 57
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The category is invalid. (and 5 more errors)","errors":{"category":["The category is invalid."],"region":["The region is invalid."],"city":["The city is invalid."],"venue":["The venue is invalid."],"dates":["The dates must contain 2 items."],"price":["The price must contain 2 items."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/client/combinations/fetch-by-path
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Client Combination by path'
+      description: 'Retrieve combination data matching specified path attribute.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: quo
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: voluptate
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: voluptates
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: nemo
+        type: string
+        custom: []
+      dates:
+        name: dates
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example:
+          - 27-05-2024
+        type: 'string[]'
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: false
+        example:
+          - 17
+        type: 'integer[]'
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: quis
+        type: string
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Must be one of <code>include</code>, <code>exclude</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: false
+        example: doloribus
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 67
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 52
+        type: integer
+        custom: []
+      path:
+        name: path
+        description: 'The path attribute of the combination.'
+        required: true
+        example: /some-region/some-city
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: quo
+      region: voluptate
+      city: voluptates
+      venue: nemo
+      dates:
+        - 27-05-2024
+      price:
+        - 17
+      address: quis
+      virtual_events: only
+      date: doloribus
+      page: 67
+      per_page: 52
+      path: /some-region/some-city
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/client/combinations/{path}/fetch-by-path'
+    metadata:
+      groupName: Combination
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Fetch Client Combination by path - GET'
+      description: 'Retrieve combination data matching specified path attribute.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      path:
+        name: path
+        description: 'The path attribute of the combination.'
+        required: true
+        example: /some-region/some-city
+        type: string
+        custom: []
+    cleanUrlParameters:
+      path: /some-region/some-city
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: qui
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      region:
+        name: region
+        description: ''
+        required: false
+        example: beatae
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: molestiae
+        type: string
+        custom: []
+      venue:
+        name: venue
+        description: ''
+        required: false
+        example: laborum
+        type: string
+        custom: []
+      dates:
+        name: dates
+        description: 'Must be a valid date in the format <code>d-m-Y</code>.'
+        required: false
+        example:
+          - 27-05-2024
+        type: 'string[]'
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: false
+        example:
+          - 8
+        type: 'integer[]'
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: sit
+        type: string
+        custom: []
+      virtual_events:
+        name: virtual_events
+        description: 'Must be one of <code>include</code>, <code>exclude</code>, or <code>only</code>.'
+        required: false
+        example: only
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 36
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: qui
+      region: beatae
+      city: molestiae
+      venue: laborum
+      dates:
+        - 27-05-2024
+      price:
+        - 8
+      address: sit
+      virtual_events: only
+      date: et
+      page: 36
+      per_page: 19
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The region is invalid. (and 4 more errors)","errors":{"region":["The region is invalid."],"city":["The city is invalid."],"venue":["The venue is invalid."],"dates":["The dates must contain 2 items."],"price":["The price must contain 2 items."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,137 @@
+name: 'Book Events'
+description: 'Manages booked events on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/book-events/participants/{event}/register'
+    metadata:
+      groupName: 'Book Events'
+      groupDescription: 'Manages booked events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Register for an event (participant)
+        Participants register for events through this endpoint.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: ''
+        required: true
+        example: a
+        type: string
+        custom: []
+      event_ref:
+        name: event_ref
+        description: 'The ref of the event.'
+        required: true
+        example: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: a
+      event_ref: 97a3ca24-0447-4b49-aa25-a8cddb0e064d
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer haeEb65ZPaD1cVfd4vkg836'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/book-events/participants/{event}/register'
+    metadata:
+      groupName: 'Book Events'
+      groupDescription: 'Manages booked events on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store the registered participant.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event:
+        name: event
+        description: ''
+        required: true
+        example: temporibus
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event: temporibus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      eec:
+        name: eec
+        description: ''
+        required: true
+        example: eaque
+        type: string
+        custom: []
+      'eec[].ref':
+        name: 'eec[].ref'
+        description: 'The ref of the event event category. Must be one of .'
+        required: true
+        example: quis
+        type: string
+        custom: []
+      'eec[].quantity':
+        name: 'eec[].quantity'
+        description: ''
+        required: true
+        example: 10
+        type: integer
+        custom: []
+      'eec[].charity':
+        name: 'eec[].charity'
+        description: 'The ref of the charity. Must be one of .'
+        required: true
+        example: tempora
+        type: string
+        custom: []
+    cleanBodyParameters:
+      eec: eaque
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e1V8dakavPfE5D66hcg3Z4b'
+    controller: null
+    method: null
+    route: null
+    custom: []

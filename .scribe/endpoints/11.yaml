@@ -1,0 +1,479 @@
+name: Sites
+description: 'Manages sites on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sites/all
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated sites for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: quis
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 38
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 70
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: quis
+      page: 38
+      per_page: 70
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1Eh66eZkDg3a48Pfba5cdvV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sites
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of sites'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P6Zca6EDb8a34hk1gdfev5V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/sites/create
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new site'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4cDdhaE1V58kba6f6ZgeP3v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/sites/create
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Store the new site
+        The site's settings gets created too.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      domain:
+        name: domain
+        description: 'The domain name of the site. Must match the regex /^(?!\-)(?:(?:[a-zA-Z\d][a-zA-Z\d\-]{0,61})?[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/.'
+        required: true
+        example: runforcharity.com
+        type: string
+        custom: []
+      name:
+        name: name
+        description: 'The name of the site. Must not be greater than 60 characters.'
+        required: true
+        example: 'Run For Charity'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'The status of the site.'
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      socials:
+        name: socials
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      'socials[].platform':
+        name: 'socials[].platform'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      'socials[].url':
+        name: 'socials[].url'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      domain: runforcharity.com
+      name: 'Run For Charity'
+      status: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dvgb6a8PE4kZ6Dcfe1h53Va'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/sites/{id}/details'
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a site'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the site.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6VcaDZ3Ek1daPhvfg645b8e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/sites/{id}/edit'
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a site'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the site.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZfdVEv684a5b6cD3akh1Pge'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/sites/{id}/update'
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a site'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the site.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      domain:
+        name: domain
+        description: 'The domain name of the site. Must match the regex /^(?!\-)(?:(?:[a-zA-Z\d][a-zA-Z\d\-]{0,61})?[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/.'
+        required: true
+        example: runforcharity.com
+        type: string
+        custom: []
+      name:
+        name: name
+        description: 'The name of the site. Must not be greater than 60 characters.'
+        required: true
+        example: 'Run For Charity'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'The status of the site.'
+        required: true
+        example: false
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      domain: runforcharity.com
+      name: 'Run For Charity'
+      status: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Za4Pk1d8Vbfva6Eg35eDch6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/sites/{id}/delete'
+    metadata:
+      groupName: Sites
+      groupDescription: 'Manages sites on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Delete a site
+        The site's settings gets deleted too.
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the site.'
+        required: true
+        example: 4
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fPEe6h48kavD1Z6bgdac3V5'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,456 @@
+name: 'Charity Signups (Enquiries)'
+description: 'Manages charity signups (enquiries) on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charity-signups
+    metadata:
+      groupName: 'Charity Signups (Enquiries)'
+      groupDescription: 'Manages charity signups (enquiries) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of charity signups'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        name: category
+        description: 'Filter by category.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ad83kZb61P5hfEV4ve6agDc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/charity-signups/create
+    metadata:
+      groupName: 'Charity Signups (Enquiries)'
+      groupDescription: 'Manages charity signups (enquiries) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a charity signup (enquiry)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The charity name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Lindsey Lodge Hospice and Healthcare'
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'The registered charity number.'
+        required: true
+        example: 3837340
+        type: integer
+        custom: []
+      sector:
+        name: sector
+        description: 'The charity category (name). Must not be greater than 255 characters.'
+        required: true
+        example: 'Cancer - General'
+        type: string
+        custom: []
+      website:
+        name: website
+        description: 'The charity website.'
+        required: true
+        example: 'https://www.againstbreastcancer.org.uk/'
+        type: string
+        custom: []
+      address_1:
+        name: address_1
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'Sir John Mills House, 12 Whitehorse Mews'
+        type: string
+        custom: []
+      address_2:
+        name: address_2
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: '37 Westminster Bridge Road'
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: London
+        type: string
+        custom: []
+      postcode:
+        name: postcode
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'SE1 7QD'
+        type: string
+        custom: []
+      contact_name:
+        name: contact_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'Paul Kelleman'
+        type: string
+        custom: []
+      contact_email:
+        name: contact_email
+        description: 'Must be a valid email address.'
+        required: true
+        example: bernard38@example.com
+        type: string
+        custom: []
+      contact_phone:
+        name: contact_phone
+        description: ''
+        required: true
+        example: '+447743780217'
+        type: string
+        custom: []
+      terms_conditions:
+        name: terms_conditions
+        description: 'Must be accepted.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      privacy_policy:
+        name: privacy_policy
+        description: 'Must be accepted.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      name: 'Lindsey Lodge Hospice and Healthcare'
+      number: 3837340
+      sector: 'Cancer - General'
+      website: 'https://www.againstbreastcancer.org.uk/'
+      address_1: 'Sir John Mills House, 12 Whitehorse Mews'
+      address_2: '37 Westminster Bridge Road'
+      city: London
+      postcode: 'SE1 7QD'
+      contact_name: 'Paul Kelleman'
+      contact_email: bernard38@example.com
+      contact_phone: '+447743780217'
+      terms_conditions: true
+      privacy_policy: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 68hDg5dPEcbe4a63aZf1Vvk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/charity-signups/{id}/update'
+    metadata:
+      groupName: 'Charity Signups (Enquiries)'
+      groupDescription: 'Manages charity signups (enquiries) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a charity signup (enquiry)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity signup.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The charity name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Lindsey Lodge Hospice and Healthcare'
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'The registered charity number.'
+        required: true
+        example: 3837340
+        type: integer
+        custom: []
+      sector:
+        name: sector
+        description: 'The charity category (name). Must not be greater than 255 characters.'
+        required: true
+        example: 'Cancer - General'
+        type: string
+        custom: []
+      website:
+        name: website
+        description: 'The charity website.'
+        required: true
+        example: 'https://www.againstbreastcancer.org.uk/'
+        type: string
+        custom: []
+      address_1:
+        name: address_1
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'Sir John Mills House, 12 Whitehorse Mews'
+        type: string
+        custom: []
+      address_2:
+        name: address_2
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: '37 Westminster Bridge Road'
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: London
+        type: string
+        custom: []
+      postcode:
+        name: postcode
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'SE1 7QD'
+        type: string
+        custom: []
+      contact_name:
+        name: contact_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'Paul Kelleman'
+        type: string
+        custom: []
+      contact_email:
+        name: contact_email
+        description: 'Must be a valid email address.'
+        required: true
+        example: cruickshank.rolando@example.net
+        type: string
+        custom: []
+      contact_phone:
+        name: contact_phone
+        description: ''
+        required: true
+        example: '+447743780217'
+        type: string
+        custom: []
+      terms_conditions:
+        name: terms_conditions
+        description: 'Must be accepted.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+      privacy_policy:
+        name: privacy_policy
+        description: 'Must be accepted.'
+        required: true
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      name: 'Lindsey Lodge Hospice and Healthcare'
+      number: 3837340
+      sector: 'Cancer - General'
+      website: 'https://www.againstbreastcancer.org.uk/'
+      address_1: 'Sir John Mills House, 12 Whitehorse Mews'
+      address_2: '37 Westminster Bridge Road'
+      city: London
+      postcode: 'SE1 7QD'
+      contact_name: 'Paul Kelleman'
+      contact_email: cruickshank.rolando@example.net
+      contact_phone: '+447743780217'
+      terms_conditions: true
+      privacy_policy: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 64Da8v1EhkZdcPVf3age6b5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charity-signups/{id}/delete'
+    metadata:
+      groupName: 'Charity Signups (Enquiries)'
+      groupDescription: 'Manages charity signups (enquiries) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a charity signup (enquiry)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity signup.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kPafdE6hD16VvabcZg5843e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charity-signups/export
+    metadata:
+      groupName: 'Charity Signups (Enquiries)'
+      groupDescription: 'Manages charity signups (enquiries) on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Export charity signups (enquiry)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        name: category
+        description: 'Filter by category.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term.'
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer khV1Eadc4fPZ8ab663De5vg'
+    controller: null
+    method: null
+    route: null
+    custom: []

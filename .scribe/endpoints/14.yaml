@@ -1,0 +1,376 @@
+name: EventFAQs
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/events/{event_ref}/faqs'
+    metadata:
+      groupName: EventFAQs
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Event FAQs'
+      description: 'FAQs associated with specified event.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: ''
+        required: true
+        example: qwertyuiopfdssdfghj
+        type: string
+        custom: []
+      event:
+        name: event
+        description: 'The ref attribute of the Event.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: qwertyuiopfdssdfghj
+      event: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EDahv8Zgb63dkfceP5a614V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/portal/events/{event_ref}/store-faqs'
+    metadata:
+      groupName: EventFAQs
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Add new FAQs'
+      description: 'Create new FAQs associated with specified event.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: ''
+        required: true
+        example: qwertyuiopfdssdfghj
+        type: string
+        custom: []
+      event:
+        name: event
+        description: 'The ref attribute of the Event.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: qwertyuiopfdssdfghj
+      event: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faqs:
+        name: faqs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: ''
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: ''
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+                          
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+                          
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+                          
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+                          
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: ''
+        required: true
+        example:
+          - nulla
+        type: 'string[]'
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: ''
+        required: true
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+                          
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+                          
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+                          
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+                          
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: ''
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      'faqs[]':
+        name: 'faqs[]'
+        description: 'The FAQs collection being created for specified event.'
+        required: true
+        example: '[["section": "some section 1", "description": "some description 1", "details": ["question": "some question 1", "answer": "some answer 1"], "images": ["data:image/png;base64,iVBORw0..."]]]'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      faqs:
+        -
+          section: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+          description: |-
+            Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                            Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+                            
+                            Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+                            
+                            Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+                            
+                            Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+                            
+                            Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+          details:
+            - nulla
+      'faqs[]': '[["section": "some section 1", "description": "some description 1", "details": ["question": "some question 1", "answer": "some answer 1"], "images": ["data:image/png;base64,iVBORw0..."]]]'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZcDva6gfh3Ee6V8Pk514bad'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/portal/events/{event_ref}/update-faq'
+    metadata:
+      groupName: EventFAQs
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update existing FAQs'
+      description: 'Update FAQs associated with specified event.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      event_ref:
+        name: event_ref
+        description: ''
+        required: true
+        example: qwertyuiopfdssdfghj
+        type: string
+        custom: []
+      event:
+        name: event
+        description: 'The ref attribute of the Event.'
+        required: true
+        example: 9762db71-f5a6-41c4-913e-90b8aebad733
+        type: string
+        custom: []
+    cleanUrlParameters:
+      event_ref: qwertyuiopfdssdfghj
+      event: 9762db71-f5a6-41c4-913e-90b8aebad733
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      faqs:
+        name: faqs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      'faqs[].faq_id':
+        name: 'faqs[].faq_id'
+        description: 'The FAQ id.'
+        required: true
+        example: 26
+        type: integer
+        custom: []
+      'faqs[].section':
+        name: 'faqs[].section'
+        description: 'The FAQ section.'
+        required: true
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].description':
+        name: 'faqs[].description'
+        description: 'The FAQ description.'
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details':
+        name: 'faqs[].details'
+        description: ''
+        required: true
+        example:
+          - ut
+        type: 'integer[]'
+        custom: []
+      'faqs[].details[].details_id':
+        name: 'faqs[].details[].details_id'
+        description: ''
+        required: false
+        example: 14
+        type: integer
+        custom: []
+      'faqs[].details[].question':
+        name: 'faqs[].details[].question'
+        description: ''
+        required: false
+        example: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+        type: string
+        custom: []
+      'faqs[].details[].answer':
+        name: 'faqs[].details[].answer'
+        description: ''
+        required: false
+        example: |-
+          Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                          Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                          Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                          Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                          Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                          Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+        type: string
+        custom: []
+      'faqs[].details[].images':
+        name: 'faqs[].details[].images'
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      'faqs[]':
+        name: 'faqs[]'
+        description: 'The FAQs collection being created for specified event. (The array items should include a key value pair of faq_id - id).'
+        required: true
+        example: '[["faq_id": 1, "section": "some section 1", "description": "some description 1", "details": ["question": "some question 1", "answer": "some answer 1"], "images": ["data:image/png;base64,iVBORw0..."]]]'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      faqs:
+        -
+          faq_id: 26
+          section: 'Mollit tempor eiusmod dolor amet laboris ad officia cillum aute ut consequat.'
+          description: |-
+            Ad magna dolor eiusmod sint nostrud quis laborum labore sit tempor. Irure irure esse ea eu amet duis enim. Eiusmod esse anim eiusmod exercitation ex. Fugiat sint adipisicing dolore culpa. Et eiusmod et sit aliquip qui. Consectetur deserunt sunt proident exercitation cillum fugiat cillum elit veniam eiusmod qui anim.
+
+                            Tempor et incididunt laborum excepteur ad aliquip veniam. Ex qui deserunt occaecat non in tempor adipisicing mollit voluptate. Tempor ex eiusmod elit Lorem sint ea. Officia dolore minim Lorem reprehenderit eiusmod ut tempor ex Lorem in enim ex exercitation.
+
+                            Sunt minim eiusmod excepteur in aute velit aute cupidatat culpa nisi laborum fugiat mollit. Enim consequat do nisi do consequat occaecat cillum. Qui ea et quis amet minim commodo nostrud.
+
+                            Dolore aliquip incididunt labore ipsum excepteur sint adipisicing aute ea mollit. Eu commodo irure reprehenderit ipsum laboris excepteur consectetur et pariatur. Aliquip ipsum ex occaecat exercitation ut mollit nisi. Irure est nisi consectetur aliquip adipisicing exercitation anim aliqua. Pariatur sint labore non aliquip aliqua fugiat amet esse nisi dolor ad ullamco. Excepteur aute aliquip eiusmod commodo incididunt commodo aliqua aute velit id proident adipisicing est.
+
+                            Aliqua mollit nisi officia laborum irure sint cillum nulla aliquip velit non tempor officia. Elit veniam cillum consectetur fugiat pariatur exercitation deserunt voluptate officia minim excepteur quis elit ullamco. Enim adipisicing excepteur deserunt eiusmod reprehenderit consequat fugiat exercitation. Dolor sint laborum consequat occaecat adipisicing aliqua enim ad nulla. Cillum exercitation cillum adipisicing ullamco. Anim occaecat officia voluptate enim dolor in consectetur consectetur consectetur Lorem sit id. Sunt eu excepteur ad eu esse.
+
+                            Id id exercitation reprehenderit voluptate tempor. Excepteur tempor ipsum dolore nulla in ea deserunt nostrud Lorem amet elit ad. Officia id laboris sit enim enim duis cillum veniam non irure commodo veniam duis. Nulla culpa nulla ad laborum. Reprehenderit dolor eiusmod reprehenderit adipisicing laboris Lorem dolore. In eu quis ipsum labore sit irure.
+          details:
+            - ut
+      'faqs[]': '[["faq_id": 1, "section": "some section 1", "description": "some description 1", "details": ["question": "some question 1", "answer": "some answer 1"], "images": ["data:image/png;base64,iVBORw0..."]]]'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kahE8g4P6ZVfd1vea35Dbc6'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,220 @@
+<?php
+
+namespace App\Services\Reporting;
+
+use App\Enums\TimeReferenceEnum;
+use App\Services\Charting\StackedColumnChart;
+use App\Services\TimePeriodReferenceService;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Enum;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Validator;
+
+use App\Modules\Setting\Enums\SiteEnum;
+use App\Enums\EventStateEnum;
+use App\Enums\CharityMembershipTypeEnum;
+use App\Enums\ExternalEnquiryStatusEnum;
+use App\Modules\Setting\Enums\OrganisationEnum;
+use App\Services\Reporting\Enums\StatisticsEntityEnum;
+use App\Services\Reporting\Enums\ExternalEnquiryStatisticsTypeEnum;
+
+use App\Traits\SiteTrait;
+use App\Services\Reporting\Traits\OptionsTrait;
+use App\Services\Reporting\Traits\EventStatsTrait;
+use App\Services\Reporting\Traits\CharityStatsTrait;
+use App\Services\Reporting\Traits\AnalyticsStatsTrait;
+use App\Services\Reporting\Traits\ParticipantStatsTrait;
+use App\Services\Reporting\Traits\StructureChartDataTrait;
+use App\Modules\Setting\Models\Traits\SiteQueryScopeTrait;
+use App\Services\Reporting\Traits\EventCategoryStatsTrait;
+use App\Services\Reporting\Traits\ExternalEnquiryStatsTrait;
+
+use App\Facades\ClientOptions;
+use App\Services\ClientOptions\EventOptions;
+use App\Services\ClientOptions\CharityOptions;
+use App\Services\ClientOptions\EventCategoryOptions;
+use App\Services\ClientOptions\CharityCategoryOptions;
+use App\Services\ClientOptions\ExternalEnquiryOptions;
+
+class ExternalEnquiryStatistics
+{
+    use SiteQueryScopeTrait, OptionsTrait, StructureChartDataTrait, AnalyticsStatsTrait, ParticipantStatsTrait, CharityStatsTrait, ExternalEnquiryStatsTrait, EventStatsTrait, EventCategoryStatsTrait, SiteTrait;
+
+    const ENTITY = StatisticsEntityEnum::ExternalEnquiry;
+
+    /**
+     * @param string|null $type
+     * @param int|null $year
+     * @param string|null $status
+     * @param string|null $category
+     * @param string|null $period
+     * @return array
+     */
+    public static function generateStatsSummary(?string $type = null, ?int $year = null, ?string $status = null, ?string $category = null, ?string $period = null): array
+    {
+        if (is_null(TimeReferenceEnum::tryFrom($period)?->value) || $period === TimeReferenceEnum::All->value) {
+            $timePeriodReferenceService = null;
+        } else $timePeriodReferenceService = new TimePeriodReferenceService($period);
+
+        if ($type === ExternalEnquiryStatisticsTypeEnum::Enquiries->value) {
+            $data = [
+                'stats' => [self::externalEnquiriesStatsData($status, $year, $timePeriodReferenceService)]
+            ];
+        } elseif ($type === ExternalEnquiryStatisticsTypeEnum::Events->value) {
+            $data = [
+                'stats' => [self::eventsStatsData(self::ENTITY, $status, $category, $year, $timePeriodReferenceService)]
+            ];
+        } elseif ($type === ExternalEnquiryStatisticsTypeEnum::Charities->value) {
+            $data = [
+                'stats' => [self::charitiesStatsData(self::ENTITY, $status, $category, $year, $timePeriodReferenceService)]
+            ];
+        } else {
+            $data = [
+                'stats' => [
+                    self::externalEnquiriesStatsData($status, $year, $timePeriodReferenceService),
+                    self::eventsStatsData(self::ENTITY, $status, $category, $year, $timePeriodReferenceService),
+                ]
+            ];
+
+            if (SiteEnum::belongsToOrganisation(OrganisationEnum::SportsMediaAgency)) {
+                $data['stats'][] = self::charitiesStatsData(self::ENTITY, $status, $category, $year, $timePeriodReferenceService);
+            }
+        }
+
+        return array_merge($data, self::getOptions());
+    }
+
+    /**
+     * @param string $type
+     * @param int|null $year
+     * @param string|null $status
+     * @param string|null $category
+     * @param string|null $period
+     * @return array
+     */
+    public static function generateYearGraphData(string $type, ?int $year, ?string $status, ?string $category, ?string $period = null): array
+    {
+        if (is_null(TimeReferenceEnum::tryFrom($period)?->value) || $period === TimeReferenceEnum::All->value) {
+            $timePeriodReferenceService = null;
+        } else $timePeriodReferenceService = new TimePeriodReferenceService($period);
+
+        $data = [];
+        $months = self::months();
+
+        if ($type == ExternalEnquiryStatisticsTypeEnum::Enquiries->value) {
+            foreach ($months as $key => $value) {
+                $data[] = [
+                    'month' => $key,
+                    'categories' => self::externalEnquiriesStackedChartData($status, $year, $value, $timePeriodReferenceService)
+                ];
+            }
+
+            $data = (new StackedColumnChart)->format($data);
+
+        } elseif ($type == ExternalEnquiryStatisticsTypeEnum::Events->value) {
+            foreach ($months as $key => $value) {
+                $data[] = [
+                    'month' => $key,
+                    'categories' => self::eventsStackedChartData(self::ENTITY, $status, $category, $year, $value, $timePeriodReferenceService)
+                ];
+            }
+
+            $data = (new StackedColumnChart)->format($data);
+
+        } elseif ($type == ExternalEnquiryStatisticsTypeEnum::Charities->value) {
+            foreach ($months as $key => $value) {
+                $data[] = [
+                    'month' => $key,
+                    'categories' => self::charitiesStackedChartData(self::ENTITY, $status, $category, $year, $value, $timePeriodReferenceService)
+                ];
+            }
+
+            $data = (new StackedColumnChart)->format($data);
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param bool $required
+     * @return \Illuminate\Validation\Validator
+     */
+    public static function getParamsValidator(bool $required = true): \Illuminate\Validation\Validator
+    {
+        return Validator::make(request()->all(), [
+            'type' => [
+                $required ? 'required' : 'sometimes',
+                new Enum(ExternalEnquiryStatisticsTypeEnum::class)
+            ],
+            'period' => [
+                'sometimes', Rule::in(TimeReferenceEnum::values())
+            ]
+        ]);
+    }
+
+    /**
+     * @param mixed $type
+     * @param mixed $status
+     * @param mixed $category
+     * @param mixed $year
+     * @param mixed $period
+     * @return array
+     */
+    public static function setParams(mixed $type, mixed $status, mixed $category = null, mixed $year, mixed $period): array
+    {
+        $period = TimeReferenceEnum::tryFrom($period)?->value;
+
+        if ($type == ExternalEnquiryStatisticsTypeEnum::Enquiries->value) {
+            $status = ExternalEnquiryStatusEnum::tryFrom($status)?->value;
+            $year = in_array($year, ExternalEnquiryOptions::getYearOptions()->pluck('value')->toArray()) ? $year : null;
+        } elseif ($type == ExternalEnquiryStatisticsTypeEnum::Charities->value) {
+            $category = in_array($category, CharityCategoryOptions::getRefOptions()->pluck('value')->toArray()) ? $category : null;
+            $status = CharityMembershipTypeEnum::tryFrom($status)?->value;
+            $year = in_array($year, CharityOptions::getYearOptions()->pluck('value')->toArray()) ? $year : null;
+        } elseif ($type == ExternalEnquiryStatisticsTypeEnum::Events->value) {
+            $category = in_array($category, EventCategoryOptions::getRefOptions()->pluck('value')->toArray()) ? $category : null;
+            $status = EventStateEnum::tryFrom($status)?->value;
+            $year = in_array($year, EventOptions::getYearOptions()->pluck('value')->toArray()) ? $year : null;
+        } else {
+            $category = null;
+            $status = null;
+            $year = null;
+        }
+
+        return array($status, $year, $category, $period);
+    }
+
+    /**
+     * @return \array[][]
+     */
+    public static function getOptions(): array
+    {
+        $options = [
+            ExternalEnquiryStatisticsTypeEnum::Enquiries->value => ClientOptions::only('external_enquiries', [
+                'statuses',
+                'years',
+                'periods'
+            ]),
+            ExternalEnquiryStatisticsTypeEnum::Events->value => [
+                'categories' => EventCategoryOptions::getRefOptions(),
+                'statuses' => EventStateEnum::_options(),
+                'years' => EventOptions::getYearOptions(),
+                'periods' => self::getPeriodOptions()
+            ]
+        ];
+
+        if (SiteEnum::belongsToOrganisation(OrganisationEnum::SportsMediaAgency)) {
+            $options[ExternalEnquiryStatisticsTypeEnum::Charities->value] = [
+                'statuses' => CharityMembershipTypeEnum::_options(),
+                'categories' => CharityCategoryOptions::getRefOptions(),
+                'years' => CharityOptions::getYearOptions(),
+                'periods' => self::getPeriodOptions()
+            ];
+        }
+
+        return [
+            'types' => ExternalEnquiryStatisticsTypeEnum::_options(),
+            'options' => $options
+        ];
+    }
+}

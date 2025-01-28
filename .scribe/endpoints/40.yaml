@@ -1,0 +1,50 @@
+name: regions
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/regions/publish
+    metadata:
+      groupName: regions
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as published one or many regions'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ids:
+        name: ids
+        description: 'An array list of ids associated with regions.'
+        required: true
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        custom: []
+    cleanBodyParameters:
+      ids:
+        - 1
+        - 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6aZedEg6Pa41fbv8Dc3kV5h'
+    controller: null
+    method: null
+    route: null
+    custom: []

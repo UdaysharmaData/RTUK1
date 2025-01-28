@@ -1,0 +1,608 @@
+name: 'Charity Categories'
+description: 'Manages charity categories on the application'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/categories/all
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated charity categories for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e6DV8aP5v6hbZkd31a4cEgf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/categories
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'The list of charity categories'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      status:
+        name: status
+        description: 'Filter by status. Example 1'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      term:
+        name: term
+        description: 'Filter by term. The term to search for.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      status: true
+      page: 1
+    bodyParameters:
+      term:
+        name: term
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      page:
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 72
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1.'
+        required: false
+        example: 16
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      term: ut
+      status: true
+      page: 72
+      per_page: 16
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8Z3f4b5gakceD6haVE61dvP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/portal/charities/categories/create
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new charity category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fk3gacePZ6Da8vEdhV65b14'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/portal/charities/categories/create
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store the new charity category'
+      description: 'TODO: Scribe considers/submits true & false (boolean values) as strings whenever a file upload is part of the request. Please look deeper into this later and fix the issue on this request.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the charity category.'
+        required: true
+        example: 'Cancer - Children & Youth 237'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'The status of the charity category.'
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      color:
+        name: color
+        description: 'The color. Must not be greater than 16 characters.'
+        required: true
+        example: '#f0ad00'
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: ''
+        required: false
+        example: sunt
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: ''
+        required: false
+        example: 'Aut minus et suscipit.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: ''
+        required: false
+        example: iusto
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Cancer - Children & Youth 237'
+      status: false
+      color: '#f0ad00'
+      meta:
+        title: sunt
+        description: 'Aut minus et suscipit.'
+        keywords: iusto
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cek5f863vZVPhad461abDEg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/categories/{id}/details'
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a charity category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity category.'
+        required: true
+        example: 73
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 73
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k8d6g5PcDafVe6aZ1hb43vE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/portal/charities/categories/{id}/edit'
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit a charity category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity category.'
+        required: true
+        example: 73
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 73
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3P61aEgdfDb65ec8Z4akvhV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/portal/charities/categories/{id}/update'
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a charity category'
+      description: 'TODO: Scribe considers/submits true & false (boolean values) as strings whenever a file upload is part of the request. Please look deeper into this later and fix the issue on this request.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity category.'
+        required: true
+        example: 73
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 73
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the charity category.'
+        required: true
+        example: 'Cancer - Children & Youth 237'
+        type: string
+        custom: []
+      status:
+        name: status
+        description: 'status bool required The status of the charity category.'
+        required: true
+        example: false
+        type: boolean
+        custom: []
+      color:
+        name: color
+        description: 'The color. Must not be greater than 16 characters.'
+        required: true
+        example: '#f0ad00'
+        type: string
+        custom: []
+      meta:
+        name: meta
+        description: ''
+        required: true
+        example: []
+        type: object
+        custom: []
+      meta.title:
+        name: meta.title
+        description: ''
+        required: false
+        example: id
+        type: string
+        custom: []
+      meta.description:
+        name: meta.description
+        description: ''
+        required: false
+        example: 'Fugit quo est qui neque.'
+        type: string
+        custom: []
+      meta.keywords:
+        name: meta.keywords
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Cancer - Children & Youth 237'
+      status: false
+      color: '#f0ad00'
+      meta:
+        title: id
+        description: 'Fugit quo est qui neque.'
+        keywords: et
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EVh5DZePdk63ab4f86gcv1a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/portal/charities/categories/{id}/delete'
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a charity category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the charity category.'
+        required: true
+        example: 73
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 73
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k1Ea6dcfPagve8Z65b4Vh3D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client/charities/categories/all
+    metadata:
+      groupName: 'Charity Categories'
+      groupDescription: 'Manages charity categories on the application'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginated charity categories for dropdown fields.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+      X-Client-Key: 15efff517947ca8fbf0e87ffafcd6e9c8e778415dfe60f4e570ecbdf76e8ebc0
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page data to return'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: null
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"status":false,"message":"Unauthorized","errors":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6k8cfZPDEh5a3V6av1de4bg'
+    controller: null
+    method: null
+    route: null
+    custom: []
